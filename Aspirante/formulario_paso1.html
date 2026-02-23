@@ -17,6 +17,7 @@
     
     <main>
         <p align="right">
+            <strong>Usuario:</strong> <span id="nombre_usuario">Cargando...</span> | 
             <a href="menu_usuario.html">← Cancelar y volver al menú</a>
         </p>
         
@@ -47,7 +48,13 @@
         
         <br><br>
         
-        <form action="formulario_paso2.html" method="get">
+        <form action="formulario_paso2.html" method="get" id="formulario">
+            
+            <!-- Campos ocultos para datos del usuario -->
+            <input type="hidden" name="nombre" id="hidden_nombre">
+            <input type="hidden" name="cedula" id="hidden_cedula">
+            <input type="hidden" name="email" id="hidden_email">
+            <input type="hidden" name="telefono" id="hidden_telefono">
             
             <!-- INFORMACIÓN DEL TRÁMITE -->
             <fieldset style="width: 80%; margin: auto;">
@@ -122,5 +129,35 @@
         <hr width="80%">
         <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
     </footer>
+    
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        function obtenerParametro(nombre) {
+            return urlParams.get(nombre) || '';
+        }
+        
+        // Obtener datos del usuario
+        const nombre = obtenerParametro('nombre');
+        const cedula = obtenerParametro('cedula');
+        const email = obtenerParametro('email');
+        const telefono = obtenerParametro('telefono');
+        
+        // Mostrar nombre del usuario
+        if (nombre) {
+            document.getElementById('nombre_usuario').textContent = nombre;
+        }
+        
+        // Rellenar campos ocultos
+        document.getElementById('hidden_nombre').value = nombre;
+        document.getElementById('hidden_cedula').value = cedula;
+        document.getElementById('hidden_email').value = email;
+        document.getElementById('hidden_telefono').value = telefono;
+        
+        // Poner fecha actual por defecto
+        const hoy = new Date().toISOString().split('T')[0];
+        document.getElementById('fecha_entrega').value = hoy;
+    </script>
 </body>
 </html>

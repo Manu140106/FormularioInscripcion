@@ -5,93 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Inscripción - Paso 5</title>
 </head>
-
-    <script>
-    // Obtener todos los parámetros de la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    
-    function obtenerParametro(nombre) {
-        return urlParams.get(nombre) || '';
-    }
-    
-    // Mostrar nombre del usuario
-    const nombre = obtenerParametro('nombre');
-    if (nombre) {
-        document.getElementById('nombre_usuario').textContent = nombre;
-    }
-    
-    // Pre-llenar los campos de firma con los datos del usuario
-    const cedula = obtenerParametro('cedula');
-    const nombres = obtenerParametro('nombres');
-    const primer_apellido = obtenerParametro('primer_apellido');
-    const segundo_apellido = obtenerParametro('segundo_apellido');
-    
-    // Nombre completo para la firma
-    const nombreCompleto = nombres + ' ' + primer_apellido + ' ' + segundo_apellido;
-    if (nombreCompleto.trim() !== '') {
-        document.getElementById('nombre_firmante').value = nombreCompleto.trim();
-    }
-    if (cedula) {
-        document.getElementById('cedula_firmante').value = cedula;
-    }
-    
-    // Fecha actual para firma
-    const hoy = new Date().toISOString().split('T')[0];
-    document.getElementById('fecha_firma_aspirante').value = hoy;
-    document.getElementById('fecha_recepcion_docs').value = hoy;
-    
-    // Lista de TODOS los parámetros a mantener
-    const parametros = [
-        'nombre', 'cedula', 'email', 'telefono', 'fecha_entrega',
-        'area_humanidades', 'area_juridica', 'area_electivas', 'asignaturas',
-        'primer_apellido', 'segundo_apellido', 'nombres', 'tipo_documento',
-        'numero_documento', 'expedida', 'pais', 'sexo', 'fecha_nacimiento',
-        'municipio_nacimiento', 'departamento_nacimiento', 'direccion',
-        'municipio_residencia', 'departamento_residencia', 'telefono_fijo',
-        'celular', 'email_contacto', 'nivel_educativo', 'titulo',
-        'institucion', 'anio_grado', 'tarjeta_profesional', 'tiene_experiencia',
-        'anios_experiencia', 'instituciones_docencia', 'areas_experiencia',
-        'cargo_actual', 'empresa_actual', 'anios_experiencia_profesional',
-        'resumen_experiencia', 'dia_lunes', 'dia_martes', 'dia_miercoles',
-        'dia_jueves', 'dia_viernes', 'dia_sabado', 'horario_manana_inicio',
-        'horario_manana_fin', 'horario_tarde_inicio', 'horario_tarde_fin'
-    ];
-    
-    // Rellenar todos los campos ocultos
-    parametros.forEach(param => {
-        const elemento = document.getElementById('hidden_' + param);
-        if (elemento) {
-            elemento.value = obtenerParametro(param);
-        }
-    });
-    
-    // Función para pasar TODOS los datos al confirmar
-    function pasarTodosLosDatos() {
-        // Agregar todos los parámetros existentes al formulario
-        parametros.forEach(param => {
-            const valor = obtenerParametro(param);
-            if (valor && !document.querySelector(`input[name="${param}"]`)) {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = param;
-                input.value = valor;
-                document.getElementById('formulario').appendChild(input);
-            }
-        });
-        return true; // Permitir que el formulario se envíe
-    }
-    
-    // Función para volver al paso anterior
-    function volver() {
-        const params = new URLSearchParams();
-        parametros.forEach(param => {
-            const valor = obtenerParametro(param);
-            if (valor) params.append(param, valor);
-        });
-        window.location.href = 'formulario_paso4.html?' + params.toString();
-    }
-</script>
-
 <body>
     <header align="center">
         <h1>Formulario de Inscripción Docente</h1>
@@ -104,7 +17,7 @@
     
     <main>
         <p align="right">
-            <strong>Usuario:</strong> <span id="nombre_usuario">Manuela Camacho</span> | 
+            <strong>Usuario:</strong> <span id="nombre_usuario">Cargando...</span> | 
             <a href="menu_usuario.html">← Cancelar y volver al menú</a>
         </p>
         
@@ -135,7 +48,7 @@
         
         <br><br>
         
-        <form action="confirmacion_inscripcion.html" method="get" id="formulario" onsubmit="pasarTodosLosDatos()">
+        <form action="confirmacion_inscripcion.html" method="get" id="formulario" onsubmit="return pasarTodosLosDatos()">
             
             <!-- Campos ocultos para mantener TODOS los datos previos -->
             <input type="hidden" name="nombre" id="hidden_nombre">
@@ -171,6 +84,22 @@
             <input type="hidden" name="tarjeta_profesional" id="hidden_tarjeta_profesional">
             <input type="hidden" name="tiene_experiencia" id="hidden_tiene_experiencia">
             <input type="hidden" name="anios_experiencia" id="hidden_anios_experiencia">
+            <input type="hidden" name="instituciones_docencia" id="hidden_instituciones_docencia">
+            <input type="hidden" name="areas_experiencia" id="hidden_areas_experiencia">
+            <input type="hidden" name="cargo_actual" id="hidden_cargo_actual">
+            <input type="hidden" name="empresa_actual" id="hidden_empresa_actual">
+            <input type="hidden" name="anios_experiencia_profesional" id="hidden_anios_experiencia_profesional">
+            <input type="hidden" name="resumen_experiencia" id="hidden_resumen_experiencia">
+            <input type="hidden" name="dia_lunes" id="hidden_dia_lunes">
+            <input type="hidden" name="dia_martes" id="hidden_dia_martes">
+            <input type="hidden" name="dia_miercoles" id="hidden_dia_miercoles">
+            <input type="hidden" name="dia_jueves" id="hidden_dia_jueves">
+            <input type="hidden" name="dia_viernes" id="hidden_dia_viernes">
+            <input type="hidden" name="dia_sabado" id="hidden_dia_sabado">
+            <input type="hidden" name="horario_manana_inicio" id="hidden_horario_manana_inicio">
+            <input type="hidden" name="horario_manana_fin" id="hidden_horario_manana_fin">
+            <input type="hidden" name="horario_tarde_inicio" id="hidden_horario_tarde_inicio">
+            <input type="hidden" name="horario_tarde_fin" id="hidden_horario_tarde_fin">
             
             <!-- DOCUMENTOS ADJUNTOS -->
             <fieldset style="width: 80%; margin: auto;">
@@ -334,6 +263,89 @@
     </footer>
     
     <script>
+        // Obtener todos los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        function obtenerParametro(nombre) {
+            return urlParams.get(nombre) || '';
+        }
+        
+        // Mostrar nombre del usuario
+        const nombre = obtenerParametro('nombre');
+        if (nombre) {
+            document.getElementById('nombre_usuario').textContent = nombre;
+        }
+        
+        // Pre-llenar los campos de firma con los datos del usuario
+        const cedula = obtenerParametro('cedula');
+        const nombres = obtenerParametro('nombres');
+        const primer_apellido = obtenerParametro('primer_apellido');
+        const segundo_apellido = obtenerParametro('segundo_apellido');
+        
+        // Nombre completo para la firma
+        const nombreCompleto = nombres + ' ' + primer_apellido + ' ' + segundo_apellido;
+        if (nombreCompleto.trim() !== '') {
+            document.getElementById('nombre_firmante').value = nombreCompleto.trim();
+        }
+        if (cedula) {
+            document.getElementById('cedula_firmante').value = cedula;
+        }
+        
+        // Fecha actual para firma
+        const hoy = new Date().toISOString().split('T')[0];
+        document.getElementById('fecha_firma_aspirante').value = hoy;
+        document.getElementById('fecha_recepcion_docs').value = hoy;
+        
+        // Lista de TODOS los parámetros a mantener
+        const parametros = [
+            'nombre', 'cedula', 'email', 'telefono', 'fecha_entrega',
+            'area_humanidades', 'area_juridica', 'area_electivas', 'asignaturas',
+            'primer_apellido', 'segundo_apellido', 'nombres', 'tipo_documento',
+            'numero_documento', 'expedida', 'pais', 'sexo', 'fecha_nacimiento',
+            'municipio_nacimiento', 'departamento_nacimiento', 'direccion',
+            'municipio_residencia', 'departamento_residencia', 'telefono_fijo',
+            'celular', 'email_contacto', 'nivel_educativo', 'titulo',
+            'institucion', 'anio_grado', 'tarjeta_profesional', 'tiene_experiencia',
+            'anios_experiencia', 'instituciones_docencia', 'areas_experiencia',
+            'cargo_actual', 'empresa_actual', 'anios_experiencia_profesional',
+            'resumen_experiencia', 'dia_lunes', 'dia_martes', 'dia_miercoles',
+            'dia_jueves', 'dia_viernes', 'dia_sabado', 'horario_manana_inicio',
+            'horario_manana_fin', 'horario_tarde_inicio', 'horario_tarde_fin'
+        ];
+        
+        // Rellenar todos los campos ocultos
+        parametros.forEach(param => {
+            const elemento = document.getElementById('hidden_' + param);
+            if (elemento) {
+                elemento.value = obtenerParametro(param);
+            }
+        });
+        
+        // Función para pasar TODOS los datos al confirmar
+        function pasarTodosLosDatos() {
+            // Agregar todos los parámetros existentes al formulario
+            parametros.forEach(param => {
+                const valor = obtenerParametro(param);
+                if (valor && !document.querySelector(`input[name="${param}"]`)) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = param;
+                    input.value = valor;
+                    document.getElementById('formulario').appendChild(input);
+                }
+            });
+            return true; // Permitir que el formulario se envíe
+        }
+        
+        // Función para volver al paso anterior
+        function volver() {
+            const params = new URLSearchParams();
+            parametros.forEach(param => {
+                const valor = obtenerParametro(param);
+                if (valor) params.append(param, valor);
+            });
+            window.location.href = 'formulario_paso4.html?' + params.toString();
+        }
     </script>
 </body>
 </html>

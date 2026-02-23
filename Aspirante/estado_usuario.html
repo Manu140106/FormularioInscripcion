@@ -16,7 +16,7 @@
     
     <main>
         <p align="right">
-            <strong>Usuario:</strong> Manuela Camacho | 
+            <strong>Usuario:</strong> <span id="nombre_usuario">Cargando...</span> | 
             <a href="menu_usuario.html">← Volver al menú</a> | 
             <a href="login_usuario.html">Cerrar Sesión</a>
         </p>
@@ -35,19 +35,19 @@
             <table border="0" cellpadding="5" width="100%">
                 <tr>
                     <td width="30%"><strong>Nombre Completo:</strong></td>
-                    <td>Manuela Camacho Llano</td>
+                    <td id="nombre_completo">Cargando...</td>
                 </tr>
                 <tr>
                     <td><strong>Cédula:</strong></td>
-                    <td>1090273495</td>
+                    <td id="cedula_completo">Cargando...</td>
                 </tr>
                 <tr>
                     <td><strong>Correo Electrónico:</strong></td>
-                    <td>manuca1401@gmail.com</td>
+                    <td id="email_completo">Cargando...</td>
                 </tr>
                 <tr>
                     <td><strong>Teléfono:</strong></td>
-                    <td>3126897802</td>
+                    <td id="telefono_completo">Cargando...</td>
                 </tr>
             </table>
         </fieldset>
@@ -65,10 +65,10 @@
                     <th>Estado</th>
                 </tr>
                 <tr align="center">
-                    <td>INS-2026-001</td>
-                    <td>15/02/2026</td>
-                    <td>Área Jurídica</td>
-                    <td bgcolor="#ffffcc"><strong>EN REVISIÓN</strong></td>
+                    <td id="consecutivo_tabla">Cargando...</td>
+                    <td id="fecha_inscripcion_tabla">Cargando...</td>
+                    <td id="area_tabla">Cargando...</td>
+                    <td bgcolor="#cce5ff"><strong>RECIBIDA</strong></td>
                 </tr>
             </table>
             
@@ -80,22 +80,21 @@
                 <tr>
                     <td width="30%"><strong>Estado Actual:</strong></td>
                     <td>
-                        <strong style="color: orange;">EN REVISIÓN</strong>
-                        <p>Su documentación está siendo revisada por el área académica</p>
+                        <strong style="color: blue;">RECIBIDA</strong>
+                        <p>Su solicitud ha sido recibida y está en proceso de revisión inicial</p>
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Documentos Recibidos:</strong></td>
                     <td>
-                        ✓ Hoja de Vida (5 folios)<br>
-                        ✓ Copia de Cédula<br>
-                        ✓ Diplomas y Certificados<br>
-                        ✓ Certificados de Experiencia
+                        ✓ Formulario de inscripción completo<br>
+                        ✓ Datos personales verificados<br>
+                        ⏳ Pendiente revisión de documentación física
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Última Actualización:</strong></td>
-                    <td>18/02/2026 - 10:30 AM</td>
+                    <td id="fecha_actualizacion">Cargando...</td>
                 </tr>
             </table>
         </fieldset>
@@ -113,22 +112,10 @@
                     <th>Responsable</th>
                 </tr>
                 <tr>
-                    <td>15/02/2026</td>
-                    <td>09:15 AM</td>
+                    <td id="fecha_hist">Cargando...</td>
+                    <td id="hora_hist">Cargando...</td>
                     <td>Inscripción recibida</td>
                     <td>Sistema Automático</td>
-                </tr>
-                <tr>
-                    <td>15/02/2026</td>
-                    <td>14:30 PM</td>
-                    <td>Documentos validados</td>
-                    <td>María González - Secretaría</td>
-                </tr>
-                <tr>
-                    <td>18/02/2026</td>
-                    <td>10:30 AM</td>
-                    <td>En revisión académica</td>
-                    <td>Dr. Carlos Rodríguez - Coordinador</td>
                 </tr>
             </table>
         </fieldset>
@@ -150,7 +137,11 @@
         <br><br>
         
         <p align="center">
-            <form action="menu_usuario.html" method="get">
+            <form action="menu_usuario.html" method="get" id="form_menu">
+                <input type="hidden" name="nombre" id="hidden_nombre">
+                <input type="hidden" name="cedula" id="hidden_cedula">
+                <input type="hidden" name="email" id="hidden_email">
+                <input type="hidden" name="telefono" id="hidden_telefono">
                 <input type="submit" value="VOLVER AL MENÚ PRINCIPAL">
             </form>
         </p>
@@ -162,5 +153,49 @@
         <hr width="80%">
         <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
     </footer>
+    
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombre = urlParams.get('nombre') || 'No disponible';
+        const cedula = urlParams.get('cedula') || 'No disponible';
+        const email = urlParams.get('email') || 'No disponible';
+        const telefono = urlParams.get('telefono') || 'No disponible';
+        
+        // Mostrar los datos en la página
+        document.getElementById('nombre_usuario').textContent = nombre;
+        document.getElementById('nombre_completo').textContent = nombre;
+        document.getElementById('cedula_completo').textContent = cedula;
+        document.getElementById('email_completo').textContent = email;
+        document.getElementById('telefono_completo').textContent = telefono;
+        
+        // Generar consecutivo
+        const numeroAleatorio = Math.floor(Math.random() * 900) + 100;
+        const consecutivo = 'INS-2026-' + numeroAleatorio;
+        document.getElementById('consecutivo_tabla').textContent = consecutivo;
+        
+        // Obtener fecha y hora actual
+        const ahora = new Date();
+        const fechaFormato = ahora.toLocaleDateString('es-CO');
+        const horaFormato = ahora.toLocaleTimeString('es-CO');
+        
+        document.getElementById('fecha_inscripcion_tabla').textContent = fechaFormato;
+        document.getElementById('fecha_actualizacion').textContent = fechaFormato + ' - ' + horaFormato;
+        document.getElementById('fecha_hist').textContent = fechaFormato;
+        document.getElementById('hora_hist').textContent = horaFormato;
+        
+        // Áreas solicitadas
+        const areas = [];
+        if (urlParams.get('area_humanidades') === 'humanidades') areas.push('Humanidades');
+        if (urlParams.get('area_juridica') === 'juridica') areas.push('Área Jurídica');
+        if (urlParams.get('area_electivas') === 'electivas') areas.push('Área Electivas');
+        document.getElementById('area_tabla').textContent = areas.length > 0 ? areas.join(', ') : 'No especificado';
+        
+        // Pasar datos al formulario
+        document.getElementById('hidden_nombre').value = nombre;
+        document.getElementById('hidden_cedula').value = cedula;
+        document.getElementById('hidden_email').value = email;
+        document.getElementById('hidden_telefono').value = telefono;
+    </script>
 </body>
 </html>

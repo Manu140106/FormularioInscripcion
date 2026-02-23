@@ -17,7 +17,7 @@
     
     <main>
         <p align="right">
-            <strong>Usuario:</strong> <span id="nombre_usuario">Manuela Camacho</span> | 
+            <strong>Usuario:</strong> <span id="nombre_usuario">Cargando...</span> | 
             <a href="menu_usuario.html">← Cancelar y volver al menú</a>
         </p>
         
@@ -132,69 +132,110 @@
             
             <br>
             
-            <!-- DISPONIBILIDAD HORARIA -->
+            <!-- DISPONIBILIDAD HORARIA MEJORADA -->
             <fieldset style="width: 80%; margin: auto;">
                 <legend><strong>Disponibilidad de Tiempo para Desarrollar la Cátedra</strong></legend>
                 
-                <p><strong>Seleccione los días en los que tiene disponibilidad:</strong></p>
+                <p><strong>Seleccione los días y horarios en los que tiene disponibilidad:</strong></p>
+                <p><em>Puede asignar diferentes horarios para cada día</em></p>
                 
-                <table border="0" cellpadding="5" width="100%">
+                <br>
+                
+                <table border="1" cellpadding="8" width="100%" cellspacing="0">
+                    <tr bgcolor="#e0e0e0">
+                        <th width="15%">Día</th>
+                        <th width="15%">Disponible</th>
+                        <th width="35%">Horario Inicio</th>
+                        <th width="35%">Horario Fin</th>
+                    </tr>
+                    
+                    <!-- LUNES -->
                     <tr>
-                        <td>
+                        <td align="center"><strong>Lunes</strong></td>
+                        <td align="center">
                             <input type="checkbox" id="dia_lunes" name="dia_lunes" value="lunes">
-                            <label for="dia_lunes">Lunes</label>
                         </td>
                         <td>
-                            <input type="checkbox" id="dia_martes" name="dia_martes" value="martes">
-                            <label for="dia_martes">Martes</label>
+                            <input type="time" id="lunes_inicio" name="lunes_inicio" size="10">
                         </td>
                         <td>
-                            <input type="checkbox" id="dia_miercoles" name="dia_miercoles" value="miercoles">
-                            <label for="dia_miercoles">Miércoles</label>
+                            <input type="time" id="lunes_fin" name="lunes_fin" size="10">
                         </td>
                     </tr>
+                    
+                    <!-- MARTES -->
+                    <tr bgcolor="#f9f9f9">
+                        <td align="center"><strong>Martes</strong></td>
+                        <td align="center">
+                            <input type="checkbox" id="dia_martes" name="dia_martes" value="martes">
+                        </td>
+                        <td>
+                            <input type="time" id="martes_inicio" name="martes_inicio" size="10">
+                        </td>
+                        <td>
+                            <input type="time" id="martes_fin" name="martes_fin" size="10">
+                        </td>
+                    </tr>
+                    
+                    <!-- MIÉRCOLES -->
                     <tr>
+                        <td align="center"><strong>Miércoles</strong></td>
+                        <td align="center">
+                            <input type="checkbox" id="dia_miercoles" name="dia_miercoles" value="miercoles">
+                        </td>
                         <td>
+                            <input type="time" id="miercoles_inicio" name="miercoles_inicio" size="10">
+                        </td>
+                        <td>
+                            <input type="time" id="miercoles_fin" name="miercoles_fin" size="10">
+                        </td>
+                    </tr>
+                    
+                    <!-- JUEVES -->
+                    <tr bgcolor="#f9f9f9">
+                        <td align="center"><strong>Jueves</strong></td>
+                        <td align="center">
                             <input type="checkbox" id="dia_jueves" name="dia_jueves" value="jueves">
-                            <label for="dia_jueves">Jueves</label>
                         </td>
                         <td>
+                            <input type="time" id="jueves_inicio" name="jueves_inicio" size="10">
+                        </td>
+                        <td>
+                            <input type="time" id="jueves_fin" name="jueves_fin" size="10">
+                        </td>
+                    </tr>
+                    
+                    <!-- VIERNES -->
+                    <tr>
+                        <td align="center"><strong>Viernes</strong></td>
+                        <td align="center">
                             <input type="checkbox" id="dia_viernes" name="dia_viernes" value="viernes">
-                            <label for="dia_viernes">Viernes</label>
                         </td>
                         <td>
+                            <input type="time" id="viernes_inicio" name="viernes_inicio" size="10">
+                        </td>
+                        <td>
+                            <input type="time" id="viernes_fin" name="viernes_fin" size="10">
+                        </td>
+                    </tr>
+                    
+                    <!-- SÁBADO -->
+                    <tr bgcolor="#f9f9f9">
+                        <td align="center"><strong>Sábado</strong></td>
+                        <td align="center">
                             <input type="checkbox" id="dia_sabado" name="dia_sabado" value="sabado">
-                            <label for="dia_sabado">Sábado</label>
+                        </td>
+                        <td>
+                            <input type="time" id="sabado_inicio" name="sabado_inicio" size="10">
+                        </td>
+                        <td>
+                            <input type="time" id="sabado_fin" name="sabado_fin" size="10">
                         </td>
                     </tr>
                 </table>
                 
                 <br>
-                
-                <p><strong>Horarios disponibles:</strong></p>
-                
-                <table border="0" cellpadding="5" width="100%">
-                    <tr>
-                        <td>
-                            <label for="horario_manana_inicio">Jornada Mañana - Desde:</label>
-                            <input type="time" id="horario_manana_inicio" name="horario_manana_inicio">
-                        </td>
-                        <td>
-                            <label for="horario_manana_fin">Hasta:</label>
-                            <input type="time" id="horario_manana_fin" name="horario_manana_fin">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="horario_tarde_inicio">Jornada Tarde - Desde:</label>
-                            <input type="time" id="horario_tarde_inicio" name="horario_tarde_inicio">
-                        </td>
-                        <td>
-                            <label for="horario_tarde_fin">Hasta:</label>
-                            <input type="time" id="horario_tarde_fin" name="horario_tarde_fin">
-                        </td>
-                    </tr>
-                </table>
+                <p><small><em>Ejemplo: Si está disponible Lunes de 7:00 AM a 12:00 PM y Miércoles de 2:00 PM a 6:00 PM, marque cada día y especifique sus horarios individuales.</em></small></p>
             </fieldset>
             
             <br><br>
@@ -231,7 +272,6 @@
         // Obtener todos los parámetros de la URL
         const urlParams = new URLSearchParams(window.location.search);
         
-        // Función para obtener y guardar todos los parámetros
         function obtenerParametro(nombre) {
             return urlParams.get(nombre) || '';
         }

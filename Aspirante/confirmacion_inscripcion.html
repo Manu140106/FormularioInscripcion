@@ -29,27 +29,27 @@
             <table border="0" cellpadding="10" width="100%">
                 <tr>
                     <td align="right" width="40%"><strong>Número de Consecutivo:</strong></td>
-                    <td bgcolor="#ffffcc"><strong id="consecutivo">INS-2026-XXX</strong></td>
+                    <td bgcolor="#ffffcc"><strong id="consecutivo">Generando...</strong></td>
                 </tr>
                 <tr>
                     <td align="right"><strong>Fecha de Inscripción:</strong></td>
-                    <td id="fecha_inscripcion">23/02/2026</td>
+                    <td id="fecha_inscripcion">Cargando...</td>
                 </tr>
                 <tr>
                     <td align="right"><strong>Nombre del Aspirante:</strong></td>
-                    <td id="nombre_aspirante">Manuela Camacho</td>
+                    <td id="nombre_aspirante">Cargando...</td>
                 </tr>
                 <tr>
                     <td align="right"><strong>Cédula:</strong></td>
-                    <td id="cedula_aspirante">1090273495</td>
+                    <td id="cedula_aspirante">Cargando...</td>
                 </tr>
                 <tr>
                     <td align="right"><strong>Correo Electrónico:</strong></td>
-                    <td id="email_aspirante">manuca1401@gmail.com</td>
+                    <td id="email_aspirante">Cargando...</td>
                 </tr>
                 <tr>
                     <td align="right"><strong>Teléfono:</strong></td>
-                    <td id="telefono_aspirante">3126897802</td>
+                    <td id="telefono_aspirante">Cargando...</td>
                 </tr>
                 <tr>
                     <td align="right"><strong>Área(s) Solicitada(s):</strong></td>
@@ -90,7 +90,7 @@
             <legend><strong>Información Importante</strong></legend>
             
             <ul style="text-align: left;">
-                <li><strong>Conserve su número de consecutivo:</strong> <span id="consecutivo2">INS-2026-XXX</span></li>
+                <li><strong>Conserve su número de consecutivo:</strong> <span id="consecutivo2">Generando...</span></li>
                 <li>Recibirá un correo de confirmación en las próximas horas a: <strong id="email_confirmacion">Cargando...</strong></li>
                 <li>Revise la carpeta de SPAM si no recibe el correo en 24 horas</li>
                 <li>Para cualquier consulta, puede comunicarse con:</li>
@@ -130,7 +130,7 @@
                     </tr>
                     <tr>
                         <td width="40%"><strong>Nombre Completo:</strong></td>
-                        <td id="resumen_nombre_completo">-</td>
+                        <td id="resumen_nombre_completo">Cargando...</td>
                     </tr>
                     <tr>
                         <td><strong>Tipo de Documento:</strong></td>
@@ -231,7 +231,9 @@
         const urlParams = new URLSearchParams(window.location.search);
         
         function obtenerParametro(nombre) {
-            return urlParams.get(nombre) || 'No disponible';
+            const valor = urlParams.get(nombre);
+            console.log(`Parámetro ${nombre}:`, valor); // Para debug
+            return valor || '';
         }
         
         // Generar número de consecutivo aleatorio
@@ -251,11 +253,12 @@
         const email = obtenerParametro('email');
         const telefono = obtenerParametro('telefono');
         
-        document.getElementById('nombre_aspirante').textContent = nombre;
-        document.getElementById('cedula_aspirante').textContent = cedula;
-        document.getElementById('email_aspirante').textContent = email;
-        document.getElementById('telefono_aspirante').textContent = telefono;
-        document.getElementById('email_confirmacion').textContent = email;
+        // Mostrar datos principales o valores por defecto
+        document.getElementById('nombre_aspirante').textContent = nombre || 'No proporcionado';
+        document.getElementById('cedula_aspirante').textContent = cedula || 'No proporcionado';
+        document.getElementById('email_aspirante').textContent = email || 'No proporcionado';
+        document.getElementById('telefono_aspirante').textContent = telefono || 'No proporcionado';
+        document.getElementById('email_confirmacion').textContent = email || 'No proporcionado';
         
         // Áreas solicitadas
         const areas = [];
@@ -265,7 +268,7 @@
         document.getElementById('areas_solicitadas').textContent = areas.length > 0 ? areas.join(', ') : 'No especificado';
         
         // Asignaturas
-        document.getElementById('asignaturas').textContent = obtenerParametro('asignaturas');
+        document.getElementById('asignaturas').textContent = obtenerParametro('asignaturas') || 'No especificado';
         
         // Nivel educativo
         const nivelEducativo = obtenerParametro('nivel_educativo');
@@ -275,25 +278,30 @@
             'maestria': 'Maestría',
             'doctorado': 'Doctorado'
         };
-        document.getElementById('nivel_educativo').textContent = nivelTexto[nivelEducativo] || nivelEducativo;
+        document.getElementById('nivel_educativo').textContent = nivelTexto[nivelEducativo] || nivelEducativo || 'No especificado';
         
         // Resumen detallado
         const nombres = obtenerParametro('nombres');
         const primer_apellido = obtenerParametro('primer_apellido');
         const segundo_apellido = obtenerParametro('segundo_apellido');
-        document.getElementById('resumen_nombre_completo').textContent = nombres + ' ' + primer_apellido + ' ' + segundo_apellido;
+        document.getElementById('resumen_nombre_completo').textContent = 
+            (nombres + ' ' + primer_apellido + ' ' + segundo_apellido).trim() || 'No disponible';
         
-        document.getElementById('resumen_tipo_documento').textContent = obtenerParametro('tipo_documento');
-        document.getElementById('resumen_numero_documento').textContent = obtenerParametro('numero_documento');
-        document.getElementById('resumen_sexo').textContent = obtenerParametro('sexo') === 'F' ? 'Femenino' : 'Masculino';
-        document.getElementById('resumen_fecha_nacimiento').textContent = obtenerParametro('fecha_nacimiento');
-        document.getElementById('resumen_lugar_nacimiento').textContent = obtenerParametro('municipio_nacimiento') + ', ' + obtenerParametro('departamento_nacimiento');
-        document.getElementById('resumen_direccion').textContent = obtenerParametro('direccion');
-        document.getElementById('resumen_ciudad').textContent = obtenerParametro('municipio_residencia') + ', ' + obtenerParametro('departamento_residencia');
-        document.getElementById('resumen_celular').textContent = obtenerParametro('celular');
-        document.getElementById('resumen_titulo').textContent = obtenerParametro('titulo');
-        document.getElementById('resumen_institucion').textContent = obtenerParametro('institucion');
-        document.getElementById('resumen_anio_grado').textContent = obtenerParametro('anio_grado');
+        document.getElementById('resumen_tipo_documento').textContent = obtenerParametro('tipo_documento') || '-';
+        document.getElementById('resumen_numero_documento').textContent = obtenerParametro('numero_documento') || '-';
+        document.getElementById('resumen_sexo').textContent = obtenerParametro('sexo') === 'F' ? 'Femenino' : (obtenerParametro('sexo') === 'M' ? 'Masculino' : '-');
+        document.getElementById('resumen_fecha_nacimiento').textContent = obtenerParametro('fecha_nacimiento') || '-';
+        document.getElementById('resumen_lugar_nacimiento').textContent = 
+            (obtenerParametro('municipio_nacimiento') + ', ' + obtenerParametro('departamento_nacimiento')).replace(', ', '') ? 
+            obtenerParametro('municipio_nacimiento') + ', ' + obtenerParametro('departamento_nacimiento') : '-';
+        document.getElementById('resumen_direccion').textContent = obtenerParametro('direccion') || '-';
+        document.getElementById('resumen_ciudad').textContent = 
+            (obtenerParametro('municipio_residencia') + ', ' + obtenerParametro('departamento_residencia')).replace(', ', '') ?
+            obtenerParametro('municipio_residencia') + ', ' + obtenerParametro('departamento_residencia') : '-';
+        document.getElementById('resumen_celular').textContent = obtenerParametro('celular') || '-';
+        document.getElementById('resumen_titulo').textContent = obtenerParametro('titulo') || '-';
+        document.getElementById('resumen_institucion').textContent = obtenerParametro('institucion') || '-';
+        document.getElementById('resumen_anio_grado').textContent = obtenerParametro('anio_grado') || '-';
         
         // Pasar datos a los formularios de navegación
         document.getElementById('hidden_nombre').value = nombre;
@@ -305,6 +313,12 @@
         document.getElementById('hidden_cedula2').value = cedula;
         document.getElementById('hidden_email2').value = email;
         document.getElementById('hidden_telefono2').value = telefono;
+        
+        // Mostrar en consola para debug
+        console.log('Todos los parámetros de la URL:');
+        for (let [key, value] of urlParams) {
+            console.log(`${key}: ${value}`);
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Funcionario - Sistema de Inscripción</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Panel de Administración</h1>
+        <h3>Gestión de Inscripciones Docentes</h3>
+        <hr width="90%">
+    </header>
+    
+    <br>
+    
+    <main>
+        <table width="100%">
+            <tr>
+                <td align="left">
+                    <strong>Funcionario:</strong> <span id="nombre_funcionario">Cargando...</span><br>
+                    <strong>Área:</strong> <span id="area_funcionario">Cargando...</span>
+                </td>
+                <td align="right">
+                    <a href="login_funcionario.html">Cerrar Sesión</a>
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+        
+        <div align="center">
+            <h3>Listado de Aspirantes Inscritos</h3>
+        </div>
+        
+        <br>
+        
+        <!-- FILTROS Y BÚSQUEDA -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Filtros de Búsqueda</strong></legend>
+            
+            <form action="panel_funcionario.html" method="get">
+                <table border="0" cellpadding="5">
+                    <tr>
+                        <td>
+                            <label for="buscar_nombre">Buscar por Nombre/Cédula:</label><br>
+                            <input type="text" id="buscar_nombre" name="buscar_nombre" size="30" 
+                                   placeholder="Ingrese nombre o cédula">
+                        </td>
+                        <td>
+                            <label for="filtro_area">Área:</label><br>
+                            <select id="filtro_area" name="filtro_area">
+                                <option value="">Todas</option>
+                                <option value="humanidades">Humanidades</option>
+                                <option value="juridica">Área Jurídica</option>
+                                <option value="electivas">Área Electivas</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="filtro_estado">Estado:</label><br>
+                            <select id="filtro_estado" name="filtro_estado">
+                                <option value="">Todos</option>
+                                <option value="recibida">Recibida</option>
+                                <option value="revision">En Revisión</option>
+                                <option value="incompleta">Documentos Incompletos</option>
+                                <option value="aprobada">Aprobada</option>
+                                <option value="rechazada">Rechazada</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="filtro_fecha">Desde Fecha:</label><br>
+                            <input type="date" id="filtro_fecha" name="filtro_fecha">
+                        </td>
+                        <td valign="bottom">
+                            <input type="submit" value="BUSCAR">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+        
+        <br>
+        
+        <!-- ESTADÍSTICAS -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Resumen de Inscripciones</strong></legend>
+            
+            <table border="0" cellpadding="10" width="100%">
+                <tr>
+                    <td align="center">
+                        <h2>45</h2>
+                        <p>Total Inscripciones</p>
+                    </td>
+                    <td align="center">
+                        <h2 style="color: blue;">12</h2>
+                        <p>Recibidas</p>
+                    </td>
+                    <td align="center">
+                        <h2 style="color: orange;">18</h2>
+                        <p>En Revisión</p>
+                    </td>
+                    <td align="center">
+                        <h2 style="color: purple;">5</h2>
+                        <p>Incompletas</p>
+                    </td>
+                    <td align="center">
+                        <h2 style="color: green;">8</h2>
+                        <p>Aprobadas</p>
+                    </td>
+                    <td align="center">
+                        <h2 style="color: red;">2</h2>
+                        <p>Rechazadas</p>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <br>
+        
+        <!-- LISTADO DE ASPIRANTES -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Aspirantes Registrados</strong></legend>
+            
+            <table border="1" cellpadding="8" width="100%" cellspacing="0">
+                <tr bgcolor="#4CAF50" style="color: white;">
+                    <th>Consecutivo</th>
+                    <th>Fecha Inscripción</th>
+                    <th>Nombre Completo</th>
+                    <th>Cédula</th>
+                    <th>Área Solicitada</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+                
+                <tr>
+                    <td align="center">INS-2026-001</td>
+                    <td align="center">15/02/2026</td>
+                    <td>Juan Pérez García</td>
+                    <td align="center">1234567890</td>
+                    <td>Área Jurídica</td>
+                    <td align="center" bgcolor="#fff3cd">EN REVISIÓN</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=001">Ver Detalle</a>
+                    </td>
+                </tr>
+                
+                <tr bgcolor="#f9f9f9">
+                    <td align="center">INS-2026-002</td>
+                    <td align="center">16/02/2026</td>
+                    <td>María Rodríguez López</td>
+                    <td align="center">9876543210</td>
+                    <td>Humanidades</td>
+                    <td align="center" bgcolor="#d4edda">APROBADA</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=002">Ver Detalle</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">INS-2026-003</td>
+                    <td align="center">16/02/2026</td>
+                    <td>Carlos Martínez Sánchez</td>
+                    <td align="center">5555555555</td>
+                    <td>Área Electivas</td>
+                    <td align="center" bgcolor="#cce5ff">RECIBIDA</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=003">Ver Detalle</a>
+                    </td>
+                </tr>
+                
+                <tr bgcolor="#f9f9f9">
+                    <td align="center">INS-2026-004</td>
+                    <td align="center">17/02/2026</td>
+                    <td>Ana Patricia Gómez</td>
+                    <td align="center">7777777777</td>
+                    <td>Área Jurídica</td>
+                    <td align="center" bgcolor="#e7d4f7">DOC. INCOMPLETOS</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=004">Ver Detalle</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">INS-2026-005</td>
+                    <td align="center">17/02/2026</td>
+                    <td>Luis Fernando Castro</td>
+                    <td align="center">3333333333</td>
+                    <td>Humanidades</td>
+                    <td align="center" bgcolor="#fff3cd">EN REVISIÓN</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=005">Ver Detalle</a>
+                    </td>
+                </tr>
+                
+                <tr bgcolor="#f9f9f9">
+                    <td align="center">INS-2026-006</td>
+                    <td align="center">18/02/2026</td>
+                    <td>Sandra Milena Torres</td>
+                    <td align="center">6666666666</td>
+                    <td>Área Jurídica</td>
+                    <td align="center" bgcolor="#d4edda">APROBADA</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=006">Ver Detalle</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">INS-2026-007</td>
+                    <td align="center">18/02/2026</td>
+                    <td>Jorge Alberto Ramírez</td>
+                    <td align="center">4444444444</td>
+                    <td>Área Electivas</td>
+                    <td align="center" bgcolor="#f8d7da">RECHAZADA</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=007">Ver Detalle</a>
+                    </td>
+                </tr>
+                
+                <tr bgcolor="#f9f9f9">
+                    <td align="center">INS-2026-008</td>
+                    <td align="center">19/02/2026</td>
+                    <td>Patricia Hernández Vega</td>
+                    <td align="center">8888888888</td>
+                    <td>Humanidades</td>
+                    <td align="center" bgcolor="#cce5ff">RECIBIDA</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=008">Ver Detalle</a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">INS-2026-009</td>
+                    <td align="center">23/02/2026</td>
+                    <td>Manuela Camacho Llano</td>
+                    <td align="center">1090273495</td>
+                    <td>Humanidades</td>
+                    <td align="center" bgcolor="#cce5ff">RECIBIDA</td>
+                    <td align="center">
+                        <a href="detalle_aspirante.html?id=009&nombre=Manuela Camacho&cedula=1090273495">Ver Detalle</a>
+                    </td>
+                </tr>
+            </table>
+            
+            <br>
+            
+            <p align="center">
+                <em>Mostrando 9 de 45 registros</em>
+            </p>
+            
+            <p align="center">
+                <a href="#">« Anterior</a> | 
+                <strong>1</strong> | 
+                <a href="#">2</a> | 
+                <a href="#">3</a> | 
+                <a href="#">4</a> | 
+                <a href="#">5</a> | 
+                <a href="#">Siguiente »</a>
+            </p>
+        </fieldset>
+        
+        <br>
+        
+        <!-- ACCIONES RÁPIDAS -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Acciones</strong></legend>
+            
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>
+                        <button type="button">📊 GENERAR REPORTE</button>
+                    </td>
+                    <td>
+                        <button type="button">📥 EXPORTAR A EXCEL</button>
+                    </td>
+                    <td>
+                        <button type="button">📧 ENVIAR NOTIFICACIONES</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="location.reload()">🔄 ACTUALIZAR LISTADO</button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </main>
+    
+    <br><br>
+    
+    <footer align="center">
+        <hr width="90%">
+        <p><small>© 2026 Escuela de Policía Rafael Reyes - Panel Administrativo</small></p>
+    </footer>
+    
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const usuario = urlParams.get('usuario') || 'Funcionario';
+        const area = urlParams.get('area') || 'Sin área';
+        
+        // Traducir área
+        const areasTraduccion = {
+            'secretaria': 'Secretaría Académica',
+            'recursos_humanos': 'Recursos Humanos',
+            'coordinacion': 'Coordinación de Docencia',
+            'direccion': 'Dirección'
+        };
+        
+        document.getElementById('nombre_funcionario').textContent = usuario;
+        document.getElementById('area_funcionario').textContent = areasTraduccion[area] || area;
+    </script>
+</body>
+</html>

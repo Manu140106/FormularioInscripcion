@@ -16,8 +16,8 @@
     
     <main>
         <p align="right">
-            <strong>Usuario:</strong> Manuela Camacho | 
-            <strong>Cédula:</strong> 1090273495 | 
+            <strong>Usuario:</strong> <span id="nombre_usuario">Cargando...</span> | 
+            <strong>Cédula:</strong> <span id="cedula_usuario">Cargando...</span> | 
             <a href="login_usuario.html">Cerrar Sesión</a>
         </p>
         
@@ -33,7 +33,11 @@
                         <h3>Nueva Inscripción</h3>
                         <p>Llenar formulario de inscripción para docencia</p>
                         <br>
-                        <form action="formulario_paso1.html" method="get">
+                        <form action="formulario_paso1.html" method="get" id="form_inscripcion">
+                            <input type="hidden" name="nombre" id="hidden_nombre">
+                            <input type="hidden" name="cedula" id="hidden_cedula">
+                            <input type="hidden" name="email" id="hidden_email">
+                            <input type="hidden" name="telefono" id="hidden_telefono">
                             <input type="submit" value="INICIAR INSCRIPCIÓN">
                         </form>
                     </td>
@@ -41,7 +45,11 @@
                         <h3>Ver Estado de Inscripción</h3>
                         <p>Consultar el estado de su solicitud</p>
                         <br>
-                        <form action="estado_usuario.html" method="get">
+                        <form action="estado_usuario.html" method="get" id="form_estado">
+                            <input type="hidden" name="nombre" id="hidden_nombre2">
+                            <input type="hidden" name="cedula" id="hidden_cedula2">
+                            <input type="hidden" name="email" id="hidden_email2">
+                            <input type="hidden" name="telefono" id="hidden_telefono2">
                             <input type="submit" value="CONSULTAR ESTADO">
                         </form>
                     </td>
@@ -74,5 +82,29 @@
         <hr width="80%">
         <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
     </footer>
+    
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombre = urlParams.get('nombre') || 'Invitado';
+        const cedula = urlParams.get('cedula') || 'N/A';
+        const email = urlParams.get('email') || '';
+        const telefono = urlParams.get('telefono') || '';
+        
+        // Mostrar los datos en la página
+        document.getElementById('nombre_usuario').textContent = nombre;
+        document.getElementById('cedula_usuario').textContent = cedula;
+        
+        // Pasar los datos a los formularios
+        document.getElementById('hidden_nombre').value = nombre;
+        document.getElementById('hidden_cedula').value = cedula;
+        document.getElementById('hidden_email').value = email;
+        document.getElementById('hidden_telefono').value = telefono;
+        
+        document.getElementById('hidden_nombre2').value = nombre;
+        document.getElementById('hidden_cedula2').value = cedula;
+        document.getElementById('hidden_email2').value = email;
+        document.getElementById('hidden_telefono2').value = telefono;
+    </script>
 </body>
 </html>
