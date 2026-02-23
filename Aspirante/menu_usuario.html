@@ -16,8 +16,8 @@
     
     <main>
         <p align="right">
-            <strong>Usuario:</strong> <span id="nombre_usuario">Cargando...</span> | 
-            <strong>Cédula:</strong> <span id="cedula_usuario">Cargando...</span> | 
+            <strong>Usuario:</strong> Manuela Camacho | 
+            <strong>Cédula:</strong> 1090273495 | 
             <a href="login_usuario.html">Cerrar Sesión</a>
         </p>
         
@@ -34,8 +34,6 @@
                         <p>Llenar formulario de inscripción para docencia</p>
                         <br>
                         <form action="formulario_paso1.html" method="get">
-                            <input type="hidden" id="hidden_nombre" name="nombre" value="">
-                            <input type="hidden" id="hidden_cedula" name="cedula" value="">
                             <input type="submit" value="INICIAR INSCRIPCIÓN">
                         </form>
                     </td>
@@ -44,8 +42,6 @@
                         <p>Consultar el estado de su solicitud</p>
                         <br>
                         <form action="estado_usuario.html" method="get">
-                            <input type="hidden" id="hidden_nombre2" name="nombre" value="">
-                            <input type="hidden" id="hidden_cedula2" name="cedula" value="">
                             <input type="submit" value="CONSULTAR ESTADO">
                         </form>
                     </td>
@@ -78,27 +74,5 @@
         <hr width="80%">
         <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
     </footer>
-    
-    <script>
-        // Obtener parámetros de la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const nombre = urlParams.get('nombre');
-        const cedula = urlParams.get('cedula');
-        
-        // Mostrar los datos en la página
-        if (nombre && cedula) {
-            document.getElementById('nombre_usuario').textContent = nombre;
-            document.getElementById('cedula_usuario').textContent = cedula;
-            
-            // Pasar los datos a los formularios
-            document.getElementById('hidden_nombre').value = nombre;
-            document.getElementById('hidden_cedula').value = cedula;
-            document.getElementById('hidden_nombre2').value = nombre;
-            document.getElementById('hidden_cedula2').value = cedula;
-        } else {
-            document.getElementById('nombre_usuario').textContent = 'Invitado';
-            document.getElementById('cedula_usuario').textContent = 'N/A';
-        }
-    </script>
 </body>
 </html>
