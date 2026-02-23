@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción - Paso 3</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Formulario de Inscripción Docente</h1>
+        <h3>Escuela de Policía Rafael Reyes</h3>
+        <p><strong>Paso 3 de 5: Información de Contacto</strong></p>
+        <hr width="80%">
+    </header>
+    
+    <br>
+    
+    <main>
+        <p align="right">
+            <strong>Usuario:</strong> <span id="nombre_usuario">Manuela Camacho</span> | 
+            <a href="menu_usuario.html">← Cancelar y volver al menú</a>
+        </p>
+        
+        <br>
+        
+        <!-- BARRA DE PROGRESO -->
+        <div align="center">
+            <table border="1" cellpadding="5" width="80%" cellspacing="0">
+                <tr>
+                    <td align="center" width="20%" bgcolor="#90EE90">
+                        ✓ 1. Info Básica
+                    </td>
+                    <td align="center" width="20%" bgcolor="#90EE90">
+                        ✓ 2. Datos Personales
+                    </td>
+                    <td align="center" width="20%" bgcolor="#4CAF50" style="color: white;">
+                        <strong>3. Contacto</strong>
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        4. Formación
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        5. Finalizar
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <br><br>
+        
+        <form action="formulario_paso4.html" method="get" id="formulario">
+            
+            <!-- Campos ocultos para mantener datos previos -->
+            <input type="hidden" name="nombre" id="hidden_nombre">
+            <input type="hidden" name="cedula" id="hidden_cedula">
+            <input type="hidden" name="email" id="hidden_email">
+            <input type="hidden" name="telefono" id="hidden_telefono">
+            <input type="hidden" name="fecha_entrega" id="hidden_fecha_entrega">
+            <input type="hidden" name="area_humanidades" id="hidden_area_humanidades">
+            <input type="hidden" name="area_juridica" id="hidden_area_juridica">
+            <input type="hidden" name="area_electivas" id="hidden_area_electivas">
+            <input type="hidden" name="asignaturas" id="hidden_asignaturas">
+            <input type="hidden" name="primer_apellido" id="hidden_primer_apellido">
+            <input type="hidden" name="segundo_apellido" id="hidden_segundo_apellido">
+            <input type="hidden" name="nombres" id="hidden_nombres">
+            <input type="hidden" name="tipo_documento" id="hidden_tipo_documento">
+            <input type="hidden" name="numero_documento" id="hidden_numero_documento">
+            <input type="hidden" name="expedida" id="hidden_expedida">
+            <input type="hidden" name="pais" id="hidden_pais">
+            <input type="hidden" name="sexo" id="hidden_sexo">
+            <input type="hidden" name="fecha_nacimiento" id="hidden_fecha_nacimiento">
+            <input type="hidden" name="municipio_nacimiento" id="hidden_municipio_nacimiento">
+            <input type="hidden" name="departamento_nacimiento" id="hidden_departamento_nacimiento">
+            
+            <!-- DIRECCIÓN DE RESIDENCIA -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Dirección de Correspondencia</strong></legend>
+                
+                <p>
+                    <label for="direccion">Dirección Completa: *</label><br>
+                    <input type="text" id="direccion" name="direccion" size="70" 
+                           placeholder="Calle/Carrera, Número, Barrio" required>
+                </p>
+                
+                <table border="0" cellpadding="5" width="100%">
+                    <tr>
+                        <td>
+                            <label for="municipio_residencia">Municipio: *</label><br>
+                            <input type="text" id="municipio_residencia" name="municipio_residencia" 
+                                   size="30" required>
+                        </td>
+                        <td>
+                            <label for="departamento_residencia">Departamento: *</label><br>
+                            <input type="text" id="departamento_residencia" name="departamento_residencia" 
+                                   size="30" required>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <br>
+            
+            <!-- TELÉFONOS Y EMAIL -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Datos de Contacto</strong></legend>
+                
+                <p>
+                    <label for="telefono_fijo">Teléfono Fijo:</label>
+                    <input type="tel" id="telefono_fijo" name="telefono_fijo" size="20" 
+                           placeholder="(Indicativo) Número">
+                    <small><em>(Opcional)</em></small>
+                </p>
+                
+                <p>
+                    <label for="celular">Celular: *</label>
+                    <input type="tel" id="celular" name="celular" size="20" 
+                           placeholder="3001234567" required>
+                </p>
+                
+                <p>
+                    <label for="email_contacto">Correo Electrónico: *</label>
+                    <input type="email" id="email_contacto" name="email_contacto" size="45" 
+                           placeholder="ejemplo@correo.com" required>
+                </p>
+                
+                <p>
+                    <label for="email_confirmacion">Confirme Correo Electrónico: *</label>
+                    <input type="email" id="email_confirmacion" name="email_confirmacion" size="45" 
+                           placeholder="ejemplo@correo.com" required>
+                </p>
+            </fieldset>
+            
+            <br>
+            
+            <!-- DISPONIBILIDAD HORARIA -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Disponibilidad de Tiempo para Desarrollar la Cátedra</strong></legend>
+                
+                <p><strong>Seleccione los días en los que tiene disponibilidad:</strong></p>
+                
+                <table border="0" cellpadding="5" width="100%">
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="dia_lunes" name="dia_lunes" value="lunes">
+                            <label for="dia_lunes">Lunes</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="dia_martes" name="dia_martes" value="martes">
+                            <label for="dia_martes">Martes</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="dia_miercoles" name="dia_miercoles" value="miercoles">
+                            <label for="dia_miercoles">Miércoles</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="dia_jueves" name="dia_jueves" value="jueves">
+                            <label for="dia_jueves">Jueves</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="dia_viernes" name="dia_viernes" value="viernes">
+                            <label for="dia_viernes">Viernes</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="dia_sabado" name="dia_sabado" value="sabado">
+                            <label for="dia_sabado">Sábado</label>
+                        </td>
+                    </tr>
+                </table>
+                
+                <br>
+                
+                <p><strong>Horarios disponibles:</strong></p>
+                
+                <table border="0" cellpadding="5" width="100%">
+                    <tr>
+                        <td>
+                            <label for="horario_manana_inicio">Jornada Mañana - Desde:</label>
+                            <input type="time" id="horario_manana_inicio" name="horario_manana_inicio">
+                        </td>
+                        <td>
+                            <label for="horario_manana_fin">Hasta:</label>
+                            <input type="time" id="horario_manana_fin" name="horario_manana_fin">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="horario_tarde_inicio">Jornada Tarde - Desde:</label>
+                            <input type="time" id="horario_tarde_inicio" name="horario_tarde_inicio">
+                        </td>
+                        <td>
+                            <label for="horario_tarde_fin">Hasta:</label>
+                            <input type="time" id="horario_tarde_fin" name="horario_tarde_fin">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <br><br>
+            
+            <p align="center">
+                <em>* Campos obligatorios</em>
+            </p>
+            
+            <br>
+            
+            <table width="80%" style="margin: auto;">
+                <tr>
+                    <td align="left">
+                        <button type="button" onclick="volver()">← ANTERIOR</button>
+                    </td>
+                    <td align="right">
+                        <input type="submit" value="SIGUIENTE: FORMACIÓN →">
+                    </td>
+                </tr>
+            </table>
+            
+        </form>
+        
+    </main>
+    
+    <br><br>
+    
+    <footer align="center">
+        <hr width="80%">
+        <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
+    </footer>
+    
+    <script>
+        // Obtener todos los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Función para obtener y guardar todos los parámetros
+        function obtenerParametro(nombre) {
+            return urlParams.get(nombre) || '';
+        }
+        
+        // Mostrar nombre del usuario
+        const nombre = obtenerParametro('nombre');
+        if (nombre) {
+            document.getElementById('nombre_usuario').textContent = nombre;
+        }
+        
+        // Lista de todos los parámetros a mantener
+        const parametros = [
+            'nombre', 'cedula', 'email', 'telefono', 'fecha_entrega',
+            'area_humanidades', 'area_juridica', 'area_electivas', 'asignaturas',
+            'primer_apellido', 'segundo_apellido', 'nombres', 'tipo_documento',
+            'numero_documento', 'expedida', 'pais', 'sexo', 'fecha_nacimiento',
+            'municipio_nacimiento', 'departamento_nacimiento'
+        ];
+        
+        // Rellenar todos los campos ocultos
+        parametros.forEach(param => {
+            const elemento = document.getElementById('hidden_' + param);
+            if (elemento) {
+                elemento.value = obtenerParametro(param);
+            }
+        });
+        
+        // Función para volver al paso anterior
+        function volver() {
+            const params = new URLSearchParams();
+            parametros.forEach(param => {
+                const valor = obtenerParametro(param);
+                if (valor) params.append(param, valor);
+            });
+            window.location.href = 'formulario_paso2.html?' + params.toString();
+        }
+    </script>
+</body>
+</html>

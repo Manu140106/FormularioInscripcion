@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción - Paso 5</title>
+</head>
+
+    <script>
+    // Obtener todos los parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    function obtenerParametro(nombre) {
+        return urlParams.get(nombre) || '';
+    }
+    
+    // Mostrar nombre del usuario
+    const nombre = obtenerParametro('nombre');
+    if (nombre) {
+        document.getElementById('nombre_usuario').textContent = nombre;
+    }
+    
+    // Pre-llenar los campos de firma con los datos del usuario
+    const cedula = obtenerParametro('cedula');
+    const nombres = obtenerParametro('nombres');
+    const primer_apellido = obtenerParametro('primer_apellido');
+    const segundo_apellido = obtenerParametro('segundo_apellido');
+    
+    // Nombre completo para la firma
+    const nombreCompleto = nombres + ' ' + primer_apellido + ' ' + segundo_apellido;
+    if (nombreCompleto.trim() !== '') {
+        document.getElementById('nombre_firmante').value = nombreCompleto.trim();
+    }
+    if (cedula) {
+        document.getElementById('cedula_firmante').value = cedula;
+    }
+    
+    // Fecha actual para firma
+    const hoy = new Date().toISOString().split('T')[0];
+    document.getElementById('fecha_firma_aspirante').value = hoy;
+    document.getElementById('fecha_recepcion_docs').value = hoy;
+    
+    // Lista de TODOS los parámetros a mantener
+    const parametros = [
+        'nombre', 'cedula', 'email', 'telefono', 'fecha_entrega',
+        'area_humanidades', 'area_juridica', 'area_electivas', 'asignaturas',
+        'primer_apellido', 'segundo_apellido', 'nombres', 'tipo_documento',
+        'numero_documento', 'expedida', 'pais', 'sexo', 'fecha_nacimiento',
+        'municipio_nacimiento', 'departamento_nacimiento', 'direccion',
+        'municipio_residencia', 'departamento_residencia', 'telefono_fijo',
+        'celular', 'email_contacto', 'nivel_educativo', 'titulo',
+        'institucion', 'anio_grado', 'tarjeta_profesional', 'tiene_experiencia',
+        'anios_experiencia', 'instituciones_docencia', 'areas_experiencia',
+        'cargo_actual', 'empresa_actual', 'anios_experiencia_profesional',
+        'resumen_experiencia', 'dia_lunes', 'dia_martes', 'dia_miercoles',
+        'dia_jueves', 'dia_viernes', 'dia_sabado', 'horario_manana_inicio',
+        'horario_manana_fin', 'horario_tarde_inicio', 'horario_tarde_fin'
+    ];
+    
+    // Rellenar todos los campos ocultos
+    parametros.forEach(param => {
+        const elemento = document.getElementById('hidden_' + param);
+        if (elemento) {
+            elemento.value = obtenerParametro(param);
+        }
+    });
+    
+    // Función para pasar TODOS los datos al confirmar
+    function pasarTodosLosDatos() {
+        // Agregar todos los parámetros existentes al formulario
+        parametros.forEach(param => {
+            const valor = obtenerParametro(param);
+            if (valor && !document.querySelector(`input[name="${param}"]`)) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = param;
+                input.value = valor;
+                document.getElementById('formulario').appendChild(input);
+            }
+        });
+        return true; // Permitir que el formulario se envíe
+    }
+    
+    // Función para volver al paso anterior
+    function volver() {
+        const params = new URLSearchParams();
+        parametros.forEach(param => {
+            const valor = obtenerParametro(param);
+            if (valor) params.append(param, valor);
+        });
+        window.location.href = 'formulario_paso4.html?' + params.toString();
+    }
+</script>
+
+<body>
+    <header align="center">
+        <h1>Formulario de Inscripción Docente</h1>
+        <h3>Escuela de Policía Rafael Reyes</h3>
+        <p><strong>Paso 5 de 5: Documentos y Finalización</strong></p>
+        <hr width="80%">
+    </header>
+    
+    <br>
+    
+    <main>
+        <p align="right">
+            <strong>Usuario:</strong> <span id="nombre_usuario">Manuela Camacho</span> | 
+            <a href="menu_usuario.html">← Cancelar y volver al menú</a>
+        </p>
+        
+        <br>
+        
+        <!-- BARRA DE PROGRESO -->
+        <div align="center">
+            <table border="1" cellpadding="5" width="80%" cellspacing="0">
+                <tr>
+                    <td align="center" width="20%" bgcolor="#90EE90">
+                        ✓ 1. Info Básica
+                    </td>
+                    <td align="center" width="20%" bgcolor="#90EE90">
+                        ✓ 2. Datos Personales
+                    </td>
+                    <td align="center" width="20%" bgcolor="#90EE90">
+                        ✓ 3. Contacto
+                    </td>
+                    <td align="center" width="20%" bgcolor="#90EE90">
+                        ✓ 4. Formación
+                    </td>
+                    <td align="center" width="20%" bgcolor="#4CAF50" style="color: white;">
+                        <strong>5. Finalizar</strong>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <br><br>
+        
+        <form action="confirmacion_inscripcion.html" method="get" id="formulario" onsubmit="pasarTodosLosDatos()">
+            
+            <!-- Campos ocultos para mantener TODOS los datos previos -->
+            <input type="hidden" name="nombre" id="hidden_nombre">
+            <input type="hidden" name="cedula" id="hidden_cedula">
+            <input type="hidden" name="email" id="hidden_email">
+            <input type="hidden" name="telefono" id="hidden_telefono">
+            <input type="hidden" name="fecha_entrega" id="hidden_fecha_entrega">
+            <input type="hidden" name="area_humanidades" id="hidden_area_humanidades">
+            <input type="hidden" name="area_juridica" id="hidden_area_juridica">
+            <input type="hidden" name="area_electivas" id="hidden_area_electivas">
+            <input type="hidden" name="asignaturas" id="hidden_asignaturas">
+            <input type="hidden" name="primer_apellido" id="hidden_primer_apellido">
+            <input type="hidden" name="segundo_apellido" id="hidden_segundo_apellido">
+            <input type="hidden" name="nombres" id="hidden_nombres">
+            <input type="hidden" name="tipo_documento" id="hidden_tipo_documento">
+            <input type="hidden" name="numero_documento" id="hidden_numero_documento">
+            <input type="hidden" name="expedida" id="hidden_expedida">
+            <input type="hidden" name="pais" id="hidden_pais">
+            <input type="hidden" name="sexo" id="hidden_sexo">
+            <input type="hidden" name="fecha_nacimiento" id="hidden_fecha_nacimiento">
+            <input type="hidden" name="municipio_nacimiento" id="hidden_municipio_nacimiento">
+            <input type="hidden" name="departamento_nacimiento" id="hidden_departamento_nacimiento">
+            <input type="hidden" name="direccion" id="hidden_direccion">
+            <input type="hidden" name="municipio_residencia" id="hidden_municipio_residencia">
+            <input type="hidden" name="departamento_residencia" id="hidden_departamento_residencia">
+            <input type="hidden" name="telefono_fijo" id="hidden_telefono_fijo">
+            <input type="hidden" name="celular" id="hidden_celular">
+            <input type="hidden" name="email_contacto" id="hidden_email_contacto">
+            <input type="hidden" name="nivel_educativo" id="hidden_nivel_educativo">
+            <input type="hidden" name="titulo" id="hidden_titulo">
+            <input type="hidden" name="institucion" id="hidden_institucion">
+            <input type="hidden" name="anio_grado" id="hidden_anio_grado">
+            <input type="hidden" name="tarjeta_profesional" id="hidden_tarjeta_profesional">
+            <input type="hidden" name="tiene_experiencia" id="hidden_tiene_experiencia">
+            <input type="hidden" name="anios_experiencia" id="hidden_anios_experiencia">
+            
+            <!-- DOCUMENTOS ADJUNTOS -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Documentos Requeridos</strong></legend>
+                
+                <p><strong>Por favor asegúrese de tener los siguientes documentos:</strong></p>
+                <ul>
+                    <li>Hoja de vida actualizada (formato libre)</li>
+                    <li>Fotocopia de la cédula de ciudadanía (ampliada al 150%)</li>
+                    <li>Fotocopia de diplomas y certificados de estudios</li>
+                    <li>Certificados de experiencia laboral</li>
+                    <li>Certificados de experiencia docente (si aplica)</li>
+                </ul>
+                
+                <br>
+                
+                <p>
+                    <label for="numero_folios">Número de folios que entrega:</label>
+                    <input type="text" id="numero_folios" name="numero_folios" size="30" 
+                           placeholder="Ejemplo: cinco (5) folios">
+                </p>
+                
+                <p>
+                    <label for="fecha_recepcion_docs">Fecha de entrega de documentos:</label>
+                    <input type="date" id="fecha_recepcion_docs" name="fecha_recepcion_docs">
+                </p>
+                
+                <p>
+                    <label for="hora_recepcion">Hora de entrega:</label>
+                    <input type="time" id="hora_recepcion" name="hora_recepcion">
+                </p>
+            </fieldset>
+            
+            <br>
+            
+            <!-- CONSTANCIA Y DECLARACIONES -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Constancia de Inscripción</strong></legend>
+                
+                <p style="text-align: justify;">
+                    La hoja de vida del profesional arriba señalado se radicó ante la Secretaría del Área Académica 
+                    de la Escuela, con el fin de inscribirse para participar dentro de la convocatoria de selección 
+                    de profesionales para conformar el Banco de elegibles como docentes hora cátedra de la 
+                    <strong>Escuela de Policía Rafael Reyes</strong>, en los programas de 
+                    <strong>TÉCNICO PROFESIONAL EN SERVICIO DE POLICÍA</strong>.
+                </p>
+                
+                <br>
+                
+                <p><strong>DECLARACIONES (Debe aceptar todas para continuar):</strong></p>
+                <br>
+                
+                <p>
+                    <input type="checkbox" id="acepta_terminos" name="acepta_terminos" value="si" required>
+                    <label for="acepta_terminos">
+                        <strong>Declaro que toda la información suministrada es verídica y me comprometo a 
+                        presentar los documentos originales cuando sean requeridos. *</strong>
+                    </label>
+                </p>
+                
+                <p>
+                    <input type="checkbox" id="autoriza_datos" name="autoriza_datos" value="si" required>
+                    <label for="autoriza_datos">
+                        <strong>Autorizo el tratamiento de mis datos personales de acuerdo con la 
+                        Ley 1581 de 2012 de protección de datos personales. *</strong>
+                    </label>
+                </p>
+                
+                <p>
+                    <input type="checkbox" id="acepta_convocatoria" name="acepta_convocatoria" value="si" required>
+                    <label for="acepta_convocatoria">
+                        <strong>Acepto los términos y condiciones de la convocatoria y me comprometo 
+                        a cumplir con los requisitos establecidos. *</strong>
+                    </label>
+                </p>
+                
+                <p>
+                    <input type="checkbox" id="acepta_notificaciones" name="acepta_notificaciones" value="si" checked>
+                    <label for="acepta_notificaciones">
+                        Acepto recibir notificaciones sobre el estado de mi inscripción vía correo electrónico
+                    </label>
+                </p>
+            </fieldset>
+            
+            <br>
+            
+            <!-- FIRMAS -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Datos para Firma</strong></legend>
+                
+                <table border="1" cellpadding="15" width="100%" cellspacing="0">
+                    <tr>
+                        <td width="50%" align="center">
+                            <p><strong>DATOS DEL ASPIRANTE</strong></p>
+                            <p><em>O quien entrega la hoja de vida</em></p>
+                            <br>
+                            
+                            <p>
+                                <label for="nombre_firmante">Nombre completo: *</label><br>
+                                <input type="text" id="nombre_firmante" name="nombre_firmante" size="35" required>
+                            </p>
+                            <p>
+                                <label for="cedula_firmante">Cédula No.: *</label><br>
+                                <input type="text" id="cedula_firmante" name="cedula_firmante" size="20" required>
+                            </p>
+                            <p>
+                                <label for="fecha_firma_aspirante">Fecha:</label><br>
+                                <input type="date" id="fecha_firma_aspirante" name="fecha_firma_aspirante">
+                            </p>
+                        </td>
+                        <td width="50%" align="center">
+                            <p><strong>DATOS DEL FUNCIONARIO</strong></p>
+                            <p><em>(Para uso administrativo)</em></p>
+                            <br>
+                            
+                            <p>
+                                <label for="nombre_funcionario">Nombre completo:</label><br>
+                                <input type="text" id="nombre_funcionario" name="nombre_funcionario" size="35">
+                            </p>
+                            <p>
+                                <label for="cargo_funcionario">Cargo:</label><br>
+                                <input type="text" id="cargo_funcionario" name="cargo_funcionario" size="35">
+                            </p>
+                            <p>
+                                <label for="fecha_recepcion_funcionario">Fecha de recepción:</label><br>
+                                <input type="date" id="fecha_recepcion_funcionario" name="fecha_recepcion_funcionario">
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <br><br>
+            
+            <p align="center">
+                <em>* Campos obligatorios</em>
+            </p>
+            
+            <br>
+            
+            <table width="80%" style="margin: auto;">
+                <tr>
+                    <td align="left">
+                        <button type="button" onclick="volver()">← ANTERIOR</button>
+                    </td>
+                    <td align="right">
+                        <input type="submit" value="✓ ENVIAR INSCRIPCIÓN">
+                    </td>
+                </tr>
+            </table>
+            
+        </form>
+        
+    </main>
+    
+    <br><br>
+    
+    <footer align="center">
+        <hr width="80%">
+        <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
+    </footer>
+    
+    <script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción - Paso 2</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Formulario de Inscripción Docente</h1>
+        <h3>Escuela de Policía Rafael Reyes</h3>
+        <p><strong>Paso 2 de 5: Datos Personales</strong></p>
+        <hr width="80%">
+    </header>
+    
+    <br>
+    
+    <main>
+        <p align="right">
+            <strong>Usuario:</strong> <span id="nombre_usuario">Manuela Camacho</span> | 
+            <a href="menu_usuario.html">← Cancelar y volver al menú</a>
+        </p>
+        
+        <br>
+        
+        <!-- BARRA DE PROGRESO -->
+        <div align="center">
+            <table border="1" cellpadding="5" width="80%" cellspacing="0">
+                <tr>
+                    <td align="center" width="20%" bgcolor="#90EE90">
+                        ✓ 1. Info Básica
+                    </td>
+                    <td align="center" width="20%" bgcolor="#4CAF50" style="color: white;">
+                        <strong>2. Datos Personales</strong>
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        3. Contacto
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        4. Formación
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        5. Finalizar
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <br><br>
+        
+        <form action="formulario_paso3.html" method="get" id="formulario">
+            
+            <!-- Campos ocultos para mantener datos previos -->
+            <input type="hidden" name="nombre" id="hidden_nombre">
+            <input type="hidden" name="cedula" id="hidden_cedula">
+            <input type="hidden" name="email" id="hidden_email">
+            <input type="hidden" name="telefono" id="hidden_telefono">
+            <input type="hidden" name="fecha_entrega" id="hidden_fecha_entrega">
+            <input type="hidden" name="area_humanidades" id="hidden_area_humanidades">
+            <input type="hidden" name="area_juridica" id="hidden_area_juridica">
+            <input type="hidden" name="area_electivas" id="hidden_area_electivas">
+            <input type="hidden" name="asignaturas" id="hidden_asignaturas">
+            
+            <!-- DATOS PERSONALES -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Datos Personales</strong></legend>
+                
+                <table border="0" cellpadding="5" width="100%">
+                    <tr>
+                        <td>
+                            <label for="primer_apellido">Primer Apellido: *</label><br>
+                            <input type="text" id="primer_apellido" name="primer_apellido" size="30" required>
+                        </td>
+                        <td>
+                            <label for="segundo_apellido">Segundo Apellido: *</label><br>
+                            <input type="text" id="segundo_apellido" name="segundo_apellido" size="30" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label for="nombres">Nombres Completos: *</label><br>
+                            <input type="text" id="nombres" name="nombres" size="66" required>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <br>
+            
+            <!-- DOCUMENTO DE IDENTIFICACIÓN -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Documento de Identificación</strong></legend>
+                
+                <p>
+                    <label for="tipo_documento">Tipo de Documento: *</label>
+                    <select id="tipo_documento" name="tipo_documento" required>
+                        <option value="">-- Seleccione --</option>
+                        <option value="cedula">Cédula de Ciudadanía</option>
+                        <option value="cedula_extranjeria">Cédula de Extranjería</option>
+                        <option value="pasaporte">Pasaporte</option>
+                    </select>
+                </p>
+                
+                <table border="0" cellpadding="5" width="100%">
+                    <tr>
+                        <td>
+                            <label for="numero_documento">Número de Documento: *</label><br>
+                            <input type="text" id="numero_documento" name="numero_documento" size="25" 
+                                   placeholder="Sin puntos ni espacios" required>
+                        </td>
+                        <td>
+                            <label for="expedida">Expedida en: *</label><br>
+                            <input type="text" id="expedida" name="expedida" size="25" 
+                                   placeholder="Ciudad" required>
+                        </td>
+                        <td>
+                            <label for="pais">País: *</label><br>
+                            <input type="text" id="pais" name="pais" value="Colombia" size="20" required>
+                        </td>
+                    </tr>
+                </table>
+                
+                <p>
+                    <label>Sexo: *</label><br>
+                    <input type="radio" id="sexo_f" name="sexo" value="F" required>
+                    <label for="sexo_f">Femenino</label>
+                    
+                    <input type="radio" id="sexo_m" name="sexo" value="M">
+                    <label for="sexo_m">Masculino</label>
+                </p>
+            </fieldset>
+            
+            <br>
+            
+            <!-- FECHA Y LUGAR DE NACIMIENTO -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Fecha y Lugar de Nacimiento</strong></legend>
+                
+                <p>
+                    <label for="fecha_nacimiento">Fecha de Nacimiento: *</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                </p>
+                
+                <table border="0" cellpadding="5" width="100%">
+                    <tr>
+                        <td>
+                            <label for="municipio_nacimiento">Municipio de Nacimiento: *</label><br>
+                            <input type="text" id="municipio_nacimiento" name="municipio_nacimiento" 
+                                   size="30" required>
+                        </td>
+                        <td>
+                            <label for="departamento_nacimiento">Departamento: *</label><br>
+                            <input type="text" id="departamento_nacimiento" name="departamento_nacimiento" 
+                                   size="30" required>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <br><br>
+            
+            <p align="center">
+                <em>* Campos obligatorios</em>
+            </p>
+            
+            <br>
+            
+            <table width="80%" style="margin: auto;">
+                <tr>
+                    <td align="left">
+                        <button type="button" onclick="volver()">← ANTERIOR</button>
+                    </td>
+                    <td align="right">
+                        <input type="submit" value="SIGUIENTE: CONTACTO →">
+                    </td>
+                </tr>
+            </table>
+            
+        </form>
+        
+    </main>
+    
+    <br><br>
+    
+    <footer align="center">
+        <hr width="80%">
+        <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
+    </footer>
+    
+    <script>
+        // Obtener parámetros de la URL del paso anterior
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Datos del usuario (del login)
+        const nombre = urlParams.get('nombre') || '';
+        const cedula = urlParams.get('cedula') || '';
+        const email = urlParams.get('email') || '';
+        const telefono = urlParams.get('telefono') || '';
+        
+        // Datos del paso 1
+        const fecha_entrega = urlParams.get('fecha_entrega') || '';
+        const area_humanidades = urlParams.get('area_humanidades') || '';
+        const area_juridica = urlParams.get('area_juridica') || '';
+        const area_electivas = urlParams.get('area_electivas') || '';
+        const asignaturas = urlParams.get('asignaturas') || '';
+        
+        // Mostrar nombre del usuario en el encabezado
+        if (nombre) {
+            document.getElementById('nombre_usuario').textContent = nombre;
+        }
+        
+        // Rellenar campos ocultos con los datos anteriores
+        document.getElementById('hidden_nombre').value = nombre;
+        document.getElementById('hidden_cedula').value = cedula;
+        document.getElementById('hidden_email').value = email;
+        document.getElementById('hidden_telefono').value = telefono;
+        document.getElementById('hidden_fecha_entrega').value = fecha_entrega;
+        document.getElementById('hidden_area_humanidades').value = area_humanidades;
+        document.getElementById('hidden_area_juridica').value = area_juridica;
+        document.getElementById('hidden_area_electivas').value = area_electivas;
+        document.getElementById('hidden_asignaturas').value = asignaturas;
+        
+        // Función para volver al paso anterior con los datos
+        function volver() {
+            const params = new URLSearchParams();
+            params.append('nombre', nombre);
+            params.append('cedula', cedula);
+            params.append('email', email);
+            params.append('telefono', telefono);
+            params.append('fecha_entrega', fecha_entrega);
+            params.append('area_humanidades', area_humanidades);
+            params.append('area_juridica', area_juridica);
+            params.append('area_electivas', area_electivas);
+            params.append('asignaturas', asignaturas);
+            
+            window.location.href = 'formulario_paso1.html?' + params.toString();
+        }
+    </script>
+</body>
+</html>

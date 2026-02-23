@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Exitosa - Sistema</title>
+</head>
+<body>
+    <header align="center">
+        <h1>¡Inscripción Exitosa!</h1>
+        <h3>Su solicitud ha sido registrada correctamente</h3>
+        <hr width="70%">
+    </header>
+    
+    <br><br>
+    
+    <main align="center">
+        
+        <div style="background-color: #d4edda; border: 2px solid #28a745; padding: 20px; width: 70%; margin: auto;">
+            <h2 style="color: #155724;">✓ Inscripción Completada</h2>
+            <p>Su formulario de inscripción ha sido recibido y procesado exitosamente.</p>
+        </div>
+        
+        <br><br>
+        
+        <fieldset style="width: 70%; margin: auto;">
+            <legend><strong>Detalles de su Inscripción</strong></legend>
+            
+            <table border="0" cellpadding="10" width="100%">
+                <tr>
+                    <td align="right" width="40%"><strong>Número de Consecutivo:</strong></td>
+                    <td bgcolor="#ffffcc"><strong id="consecutivo">INS-2026-XXX</strong></td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Fecha de Inscripción:</strong></td>
+                    <td id="fecha_inscripcion">23/02/2026</td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Nombre del Aspirante:</strong></td>
+                    <td id="nombre_aspirante">Manuela Camacho</td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Cédula:</strong></td>
+                    <td id="cedula_aspirante">1090273495</td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Correo Electrónico:</strong></td>
+                    <td id="email_aspirante">manuca1401@gmail.com</td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Teléfono:</strong></td>
+                    <td id="telefono_aspirante">3126897802</td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Área(s) Solicitada(s):</strong></td>
+                    <td id="areas_solicitadas">Cargando...</td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Asignatura(s):</strong></td>
+                    <td id="asignaturas">Cargando...</td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Nivel Educativo:</strong></td>
+                    <td id="nivel_educativo">Cargando...</td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Estado Inicial:</strong></td>
+                    <td bgcolor="#cce5ff"><strong>RECIBIDA</strong></td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <br>
+        
+        <fieldset style="width: 70%; margin: auto;">
+            <legend><strong>Próximos Pasos</strong></legend>
+            
+            <ol style="text-align: left;">
+                <li>Su documentación será revisada por el área académica en un plazo de 5 a 10 días hábiles</li>
+                <li>Recibirá una notificación por correo electrónico sobre el estado de su solicitud</li>
+                <li>Puede consultar el estado de su inscripción en cualquier momento desde su panel de usuario</li>
+                <li>Si su documentación está incompleta, se le notificará qué documentos debe completar</li>
+                <li>Una vez aprobada su solicitud, será contactado para los siguientes pasos del proceso</li>
+            </ol>
+        </fieldset>
+        
+        <br>
+        
+        <fieldset style="width: 70%; margin: auto;">
+            <legend><strong>Información Importante</strong></legend>
+            
+            <ul style="text-align: left;">
+                <li><strong>Conserve su número de consecutivo:</strong> <span id="consecutivo2">INS-2026-XXX</span></li>
+                <li>Recibirá un correo de confirmación en las próximas horas a: <strong id="email_confirmacion">Cargando...</strong></li>
+                <li>Revise la carpeta de SPAM si no recibe el correo en 24 horas</li>
+                <li>Para cualquier consulta, puede comunicarse con:</li>
+            </ul>
+            
+            <br>
+            
+            <table border="0" cellpadding="5" width="90%" style="margin: auto;">
+                <tr>
+                    <td><strong>Teléfono:</strong></td>
+                    <td>(1) 555-0000 Ext. 123</td>
+                </tr>
+                <tr>
+                    <td><strong>Email:</strong></td>
+                    <td>inscripciones@policia.edu.co</td>
+                </tr>
+                <tr>
+                    <td><strong>Horario de Atención:</strong></td>
+                    <td>Lunes a Viernes, 8:00 AM - 5:00 PM</td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <br>
+        
+        <!-- RESUMEN DE DATOS ENVIADOS -->
+        <fieldset style="width: 70%; margin: auto;">
+            <legend><strong>Resumen de Datos Enviados</strong></legend>
+            
+            <details>
+                <summary><strong>Ver información completa de la inscripción</strong></summary>
+                <br>
+                
+                <table border="1" cellpadding="8" width="100%">
+                    <tr bgcolor="#e0e0e0">
+                        <th colspan="2">DATOS PERSONALES</th>
+                    </tr>
+                    <tr>
+                        <td width="40%"><strong>Nombre Completo:</strong></td>
+                        <td id="resumen_nombre_completo">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tipo de Documento:</strong></td>
+                        <td id="resumen_tipo_documento">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Número de Documento:</strong></td>
+                        <td id="resumen_numero_documento">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sexo:</strong></td>
+                        <td id="resumen_sexo">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fecha de Nacimiento:</strong></td>
+                        <td id="resumen_fecha_nacimiento">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lugar de Nacimiento:</strong></td>
+                        <td id="resumen_lugar_nacimiento">-</td>
+                    </tr>
+                    
+                    <tr bgcolor="#e0e0e0">
+                        <th colspan="2">CONTACTO</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Dirección:</strong></td>
+                        <td id="resumen_direccion">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ciudad:</strong></td>
+                        <td id="resumen_ciudad">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Celular:</strong></td>
+                        <td id="resumen_celular">-</td>
+                    </tr>
+                    
+                    <tr bgcolor="#e0e0e0">
+                        <th colspan="2">FORMACIÓN ACADÉMICA</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Título:</strong></td>
+                        <td id="resumen_titulo">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Institución:</strong></td>
+                        <td id="resumen_institucion">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Año de Grado:</strong></td>
+                        <td id="resumen_anio_grado">-</td>
+                    </tr>
+                </table>
+            </details>
+        </fieldset>
+        
+        <br><br>
+        
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>
+                    <form action="estado_usuario.html" method="get" id="form_estado">
+                        <input type="hidden" name="nombre" id="hidden_nombre">
+                        <input type="hidden" name="cedula" id="hidden_cedula">
+                        <input type="hidden" name="email" id="hidden_email">
+                        <input type="hidden" name="telefono" id="hidden_telefono">
+                        <input type="submit" value="VER ESTADO DE INSCRIPCIÓN">
+                    </form>
+                </td>
+                <td>
+                    <form action="menu_usuario.html" method="get" id="form_menu">
+                        <input type="hidden" name="nombre" id="hidden_nombre2">
+                        <input type="hidden" name="cedula" id="hidden_cedula2">
+                        <input type="hidden" name="email" id="hidden_email2">
+                        <input type="hidden" name="telefono" id="hidden_telefono2">
+                        <input type="submit" value="VOLVER AL MENÚ PRINCIPAL">
+                    </form>
+                </td>
+                <td>
+                    <button type="button" onclick="window.print()">IMPRIMIR CONFIRMACIÓN</button>
+                </td>
+            </tr>
+        </table>
+        
+    </main>
+    
+    <br><br><br>
+    
+    <footer align="center">
+        <hr width="70%">
+        <p><strong>Gracias por su interés en formar parte de la Escuela de Policía Rafael Reyes</strong></p>
+        <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
+    </footer>
+    
+    <script>
+        // Obtener todos los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        function obtenerParametro(nombre) {
+            return urlParams.get(nombre) || 'No disponible';
+        }
+        
+        // Generar número de consecutivo aleatorio
+        const numeroAleatorio = Math.floor(Math.random() * 900) + 100;
+        const consecutivo = 'INS-2026-' + numeroAleatorio;
+        document.getElementById('consecutivo').textContent = consecutivo;
+        document.getElementById('consecutivo2').textContent = consecutivo;
+        
+        // Obtener fecha y hora actual
+        const ahora = new Date();
+        const fechaHora = ahora.toLocaleDateString('es-CO') + ' - ' + ahora.toLocaleTimeString('es-CO');
+        document.getElementById('fecha_inscripcion').textContent = fechaHora;
+        
+        // Datos principales
+        const nombre = obtenerParametro('nombre');
+        const cedula = obtenerParametro('cedula');
+        const email = obtenerParametro('email');
+        const telefono = obtenerParametro('telefono');
+        
+        document.getElementById('nombre_aspirante').textContent = nombre;
+        document.getElementById('cedula_aspirante').textContent = cedula;
+        document.getElementById('email_aspirante').textContent = email;
+        document.getElementById('telefono_aspirante').textContent = telefono;
+        document.getElementById('email_confirmacion').textContent = email;
+        
+        // Áreas solicitadas
+        const areas = [];
+        if (obtenerParametro('area_humanidades') === 'humanidades') areas.push('Humanidades');
+        if (obtenerParametro('area_juridica') === 'juridica') areas.push('Área Jurídica');
+        if (obtenerParametro('area_electivas') === 'electivas') areas.push('Área Electivas');
+        document.getElementById('areas_solicitadas').textContent = areas.length > 0 ? areas.join(', ') : 'No especificado';
+        
+        // Asignaturas
+        document.getElementById('asignaturas').textContent = obtenerParametro('asignaturas');
+        
+        // Nivel educativo
+        const nivelEducativo = obtenerParametro('nivel_educativo');
+        const nivelTexto = {
+            'profesional': 'Profesional',
+            'especializacion': 'Especialización',
+            'maestria': 'Maestría',
+            'doctorado': 'Doctorado'
+        };
+        document.getElementById('nivel_educativo').textContent = nivelTexto[nivelEducativo] || nivelEducativo;
+        
+        // Resumen detallado
+        const nombres = obtenerParametro('nombres');
+        const primer_apellido = obtenerParametro('primer_apellido');
+        const segundo_apellido = obtenerParametro('segundo_apellido');
+        document.getElementById('resumen_nombre_completo').textContent = nombres + ' ' + primer_apellido + ' ' + segundo_apellido;
+        
+        document.getElementById('resumen_tipo_documento').textContent = obtenerParametro('tipo_documento');
+        document.getElementById('resumen_numero_documento').textContent = obtenerParametro('numero_documento');
+        document.getElementById('resumen_sexo').textContent = obtenerParametro('sexo') === 'F' ? 'Femenino' : 'Masculino';
+        document.getElementById('resumen_fecha_nacimiento').textContent = obtenerParametro('fecha_nacimiento');
+        document.getElementById('resumen_lugar_nacimiento').textContent = obtenerParametro('municipio_nacimiento') + ', ' + obtenerParametro('departamento_nacimiento');
+        document.getElementById('resumen_direccion').textContent = obtenerParametro('direccion');
+        document.getElementById('resumen_ciudad').textContent = obtenerParametro('municipio_residencia') + ', ' + obtenerParametro('departamento_residencia');
+        document.getElementById('resumen_celular').textContent = obtenerParametro('celular');
+        document.getElementById('resumen_titulo').textContent = obtenerParametro('titulo');
+        document.getElementById('resumen_institucion').textContent = obtenerParametro('institucion');
+        document.getElementById('resumen_anio_grado').textContent = obtenerParametro('anio_grado');
+        
+        // Pasar datos a los formularios de navegación
+        document.getElementById('hidden_nombre').value = nombre;
+        document.getElementById('hidden_cedula').value = cedula;
+        document.getElementById('hidden_email').value = email;
+        document.getElementById('hidden_telefono').value = telefono;
+        
+        document.getElementById('hidden_nombre2').value = nombre;
+        document.getElementById('hidden_cedula2').value = cedula;
+        document.getElementById('hidden_email2').value = email;
+        document.getElementById('hidden_telefono2').value = telefono;
+    </script>
+</body>
+</html>

@@ -15,27 +15,39 @@
     <br><br>
     
     <main align="center">
-        <fieldset style="width: 400px; margin: auto;">
+        <fieldset style="width: 500px; margin: auto;">
             <legend><strong>Iniciar Sesión</strong></legend>
             
             <form action="menu_usuario.html" method="get">
                 <br>
                 
                 <p align="left">
-                    <label for="nombre">Nombre Completo:</label><br>
-                    <input type="text" id="nombre" name="nombre" size="40" 
+                    <label for="nombre">Nombre Completo: *</label><br>
+                    <input type="text" id="nombre" name="nombre" size="50" 
                            placeholder="Ingrese su nombre completo" required>
                 </p>
                 
                 <p align="left">
-                    <label for="cedula">Número de Cédula:</label><br>
-                    <input type="text" id="cedula" name="cedula" size="40" 
+                    <label for="cedula">Número de Cédula: *</label><br>
+                    <input type="text" id="cedula" name="cedula" size="50" 
                            placeholder="Ingrese su número de cédula" required>
                 </p>
                 
                 <p align="left">
-                    <label for="password">Contraseña:</label><br>
-                    <input type="password" id="password" name="password" size="40" 
+                    <label for="email">Correo Electrónico: *</label><br>
+                    <input type="email" id="email" name="email" size="50" 
+                           placeholder="Ingrese su correo electrónico" required>
+                </p>
+                
+                <p align="left">
+                    <label for="telefono">Teléfono: *</label><br>
+                    <input type="tel" id="telefono" name="telefono" size="50" 
+                           placeholder="Ingrese su número de teléfono" required>
+                </p>
+                
+                <p align="left">
+                    <label for="password">Contraseña: *</label><br>
+                    <input type="password" id="password" name="password" size="50" 
                            placeholder="Ingrese su contraseña" required>
                 </p>
                 
