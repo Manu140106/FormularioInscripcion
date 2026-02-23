@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción - Paso 1</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Formulario de Inscripción Docente</h1>
+        <h3>Escuela de Policía Rafael Reyes</h3>
+        <p><strong>Paso 1 de 5: Información Básica</strong></p>
+        <hr width="80%">
+    </header>
+    
+    <br>
+    
+    <main>
+        <p align="right">
+            <a href="menu_usuario.html">← Cancelar y volver al menú</a>
+        </p>
+        
+        <br>
+        
+        <!-- BARRA DE PROGRESO -->
+        <div align="center">
+            <table border="1" cellpadding="5" width="80%" cellspacing="0">
+                <tr>
+                    <td align="center" width="20%" bgcolor="#4CAF50" style="color: white;">
+                        <strong>1. Info Básica</strong>
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        2. Datos Personales
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        3. Contacto
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        4. Formación
+                    </td>
+                    <td align="center" width="20%" bgcolor="#e0e0e0">
+                        5. Finalizar
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <br><br>
+        
+        <form action="formulario_paso2.html" method="get">
+            
+            <!-- INFORMACIÓN DEL TRÁMITE -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Información del Trámite</strong></legend>
+                
+                <p>
+                    <label for="fecha_entrega">Fecha de Entrega: *</label>
+                    <input type="date" id="fecha_entrega" name="fecha_entrega" required>
+                </p>
+                
+                <p>
+                    <label for="consecutivo">Consecutivo de Inscripción:</label>
+                    <input type="text" id="consecutivo" name="consecutivo" 
+                           value="Se asignará automáticamente" readonly>
+                    <br><small><em>Este número se asignará al finalizar la inscripción</em></small>
+                </p>
+            </fieldset>
+            
+            <br>
+            
+            <!-- ÁREA DE INSCRIPCIÓN -->
+            <fieldset style="width: 80%; margin: auto;">
+                <legend><strong>Área de Inscripción *</strong></legend>
+                
+                <p><strong>Seleccione el área a la cual desea inscribirse:</strong></p>
+                <p><em>(Puede seleccionar más de una opción)</em></p>
+                
+                <p>
+                    <input type="checkbox" id="area_humanidades" name="area_humanidades" value="humanidades">
+                    <label for="area_humanidades">Humanidades</label>
+                </p>
+                
+                <p>
+                    <input type="checkbox" id="area_juridica" name="area_juridica" value="juridica">
+                    <label for="area_juridica">Área Jurídica</label>
+                </p>
+                
+                <p>
+                    <input type="checkbox" id="area_electivas" name="area_electivas" value="electivas">
+                    <label for="area_electivas">Área Electivas</label>
+                </p>
+                
+                <br>
+                
+                <p>
+                    <label for="asignaturas">Asignatura(s) a las que se inscribe (máximo dos): *</label><br>
+                    <input type="text" id="asignaturas" name="asignaturas" size="60" 
+                           placeholder="Ejemplo: Constitución Política, Derechos Humanos" required>
+                    <br><small><em>Separe las asignaturas con coma si son dos</em></small>
+                </p>
+            </fieldset>
+            
+            <br><br>
+            
+            <p align="center">
+                <em>* Campos obligatorios</em>
+            </p>
+            
+            <br>
+            
+            <p align="center">
+                <input type="submit" value="SIGUIENTE: DATOS PERSONALES →">
+            </p>
+            
+        </form>
+        
+    </main>
+    
+    <br><br>
+    
+    <footer align="center">
+        <hr width="80%">
+        <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
+    </footer>
+</body>
+</html>

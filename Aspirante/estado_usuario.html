@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de Inscripción - Sistema</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Estado de su Inscripción</h1>
+        <h3>Consulta de Solicitud</h3>
+        <hr width="80%">
+    </header>
+    
+    <br>
+    
+    <main>
+        <p align="right">
+            <strong>Usuario:</strong> Juan Pérez | 
+            <a href="menu_usuario.html">← Volver al menú</a> | 
+            <a href="login_usuario.html">Cerrar Sesión</a>
+        </p>
+        
+        <br>
+        
+        <div align="center">
+            <h3>Información de su Solicitud</h3>
+        </div>
+        
+        <br>
+        
+        <fieldset style="width: 80%; margin: auto;">
+            <legend><strong>Datos del Aspirante</strong></legend>
+            
+            <table border="0" cellpadding="5" width="100%">
+                <tr>
+                    <td width="30%"><strong>Nombre Completo:</strong></td>
+                    <td>Manuela Camacho Llano</td>
+                </tr>
+                <tr>
+                    <td><strong>Cédula:</strong></td>
+                    <td>1090273495</td>
+                </tr>
+                <tr>
+                    <td><strong>Correo Electrónico:</strong></td>
+                    <td>manuca1401@gmail.com</td>
+                </tr>
+                <tr>
+                    <td><strong>Teléfono:</strong></td>
+                    <td>3126897802</td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <br>
+        
+        <fieldset style="width: 80%; margin: auto;">
+            <legend><strong>Estado de la Inscripción</strong></legend>
+            
+            <table border="1" cellpadding="10" width="100%">
+                <tr bgcolor="#e0e0e0">
+                    <th>Consecutivo</th>
+                    <th>Fecha de Inscripción</th>
+                    <th>Área Solicitada</th>
+                    <th>Estado</th>
+                </tr>
+                <tr align="center">
+                    <td>INS-2026-001</td>
+                    <td>15/02/2026</td>
+                    <td>Área Jurídica</td>
+                    <td bgcolor="#ffffcc"><strong>EN REVISIÓN</strong></td>
+                </tr>
+            </table>
+            
+            <br>
+            
+            <h4>Detalles del Estado:</h4>
+            
+            <table border="0" cellpadding="5" width="100%">
+                <tr>
+                    <td width="30%"><strong>Estado Actual:</strong></td>
+                    <td>
+                        <strong style="color: orange;">EN REVISIÓN</strong>
+                        <p>Su documentación está siendo revisada por el área académica</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Documentos Recibidos:</strong></td>
+                    <td>
+                        ✓ Hoja de Vida (5 folios)<br>
+                        ✓ Copia de Cédula<br>
+                        ✓ Diplomas y Certificados<br>
+                        ✓ Certificados de Experiencia
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Última Actualización:</strong></td>
+                    <td>18/02/2026 - 10:30 AM</td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <br>
+        
+        <fieldset style="width: 80%; margin: auto;">
+            <legend><strong>Histórico del Proceso</strong></legend>
+            
+            <table border="1" cellpadding="8" width="100%">
+                <tr bgcolor="#e0e0e0">
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Evento</th>
+                    <th>Responsable</th>
+                </tr>
+                <tr>
+                    <td>15/02/2026</td>
+                    <td>09:15 AM</td>
+                    <td>Inscripción recibida</td>
+                    <td>Sistema Automático</td>
+                </tr>
+                <tr>
+                    <td>15/02/2026</td>
+                    <td>14:30 PM</td>
+                    <td>Documentos validados</td>
+                    <td>María González - Secretaría</td>
+                </tr>
+                <tr>
+                    <td>18/02/2026</td>
+                    <td>10:30 AM</td>
+                    <td>En revisión académica</td>
+                    <td>Dr. Carlos Rodríguez - Coordinador</td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <br>
+        
+        <fieldset style="width: 80%; margin: auto;">
+            <legend><strong>Posibles Estados</strong></legend>
+            
+            <ul>
+                <li><strong style="color: blue;">RECIBIDA:</strong> Su solicitud ha sido recibida</li>
+                <li><strong style="color: orange;">EN REVISIÓN:</strong> Su documentación está siendo revisada</li>
+                <li><strong style="color: purple;">DOCUMENTOS INCOMPLETOS:</strong> Faltan documentos por entregar</li>
+                <li><strong style="color: green;">APROBADA:</strong> Su solicitud ha sido aprobada</li>
+                <li><strong style="color: red;">RECHAZADA:</strong> Su solicitud no cumple los requisitos</li>
+            </ul>
+        </fieldset>
+        
+        <br><br>
+        
+        <p align="center">
+            <form action="menu_usuario.html" method="get">
+                <input type="submit" value="VOLVER AL MENÚ PRINCIPAL">
+            </form>
+        </p>
+    </main>
+    
+    <br>
+    
+    <footer align="center">
+        <hr width="80%">
+        <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
+    </footer>
+</body>
+</html>

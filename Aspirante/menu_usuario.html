@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Aspirante - Sistema de Inscripción</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Panel del Aspirante</h1>
+        <h3>Bienvenido al Sistema de Inscripción</h3>
+        <hr width="80%">
+    </header>
+    
+    <br>
+    
+    <main>
+        <p align="right">
+            <strong>Usuario:</strong> <span id="nombre_usuario">Cargando...</span> | 
+            <strong>Cédula:</strong> <span id="cedula_usuario">Cargando...</span> | 
+            <a href="login_usuario.html">Cerrar Sesión</a>
+        </p>
+        
+        <br>
+        
+        <div align="center">
+            <h3>¿Qué desea hacer?</h3>
+            <br><br>
+            
+            <table border="1" cellpadding="20" cellspacing="0" width="80%">
+                <tr>
+                    <td align="center" width="50%">
+                        <h3>Nueva Inscripción</h3>
+                        <p>Llenar formulario de inscripción para docencia</p>
+                        <br>
+                        <form action="formulario_paso1.html" method="get">
+                            <input type="hidden" id="hidden_nombre" name="nombre" value="">
+                            <input type="hidden" id="hidden_cedula" name="cedula" value="">
+                            <input type="submit" value="INICIAR INSCRIPCIÓN">
+                        </form>
+                    </td>
+                    <td align="center" width="50%">
+                        <h3>Ver Estado de Inscripción</h3>
+                        <p>Consultar el estado de su solicitud</p>
+                        <br>
+                        <form action="estado_usuario.html" method="get">
+                            <input type="hidden" id="hidden_nombre2" name="nombre" value="">
+                            <input type="hidden" id="hidden_cedula2" name="cedula" value="">
+                            <input type="submit" value="CONSULTAR ESTADO">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <br><br>
+        
+        <fieldset style="width: 80%; margin: auto;">
+            <legend><strong>Información Importante</strong></legend>
+            <ul>
+                <li>Asegúrese de tener toda la documentación requerida antes de iniciar la inscripción</li>
+                <li>El formulario puede ser guardado y completado en varias sesiones</li>
+                <li>Una vez enviado, podrá consultar el estado de su solicitud en esta misma pantalla</li>
+                <li>Los resultados del proceso de selección serán notificados vía correo electrónico</li>
+            </ul>
+        </fieldset>
+        
+        <br>
+        
+        <p align="center">
+            <a href="login_usuario.html">← Volver al login</a>
+        </p>
+    </main>
+    
+    <br><br>
+    
+    <footer align="center">
+        <hr width="80%">
+        <p><small>© 2026 Escuela de Policía Rafael Reyes</small></p>
+    </footer>
+    
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombre = urlParams.get('nombre');
+        const cedula = urlParams.get('cedula');
+        
+        // Mostrar los datos en la página
+        if (nombre && cedula) {
+            document.getElementById('nombre_usuario').textContent = nombre;
+            document.getElementById('cedula_usuario').textContent = cedula;
+            
+            // Pasar los datos a los formularios
+            document.getElementById('hidden_nombre').value = nombre;
+            document.getElementById('hidden_cedula').value = cedula;
+            document.getElementById('hidden_nombre2').value = nombre;
+            document.getElementById('hidden_cedula2').value = cedula;
+        } else {
+            document.getElementById('nombre_usuario').textContent = 'Invitado';
+            document.getElementById('cedula_usuario').textContent = 'N/A';
+        }
+    </script>
+</body>
+</html>
