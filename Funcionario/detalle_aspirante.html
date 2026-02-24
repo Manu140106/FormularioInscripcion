@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Aspirante - Panel Administrativo</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Detalle del Aspirante</h1>
+        <h3>Gestión de Inscripción</h3>
+        <hr width="90%">
+    </header>
+
+    <br>
+
+    <main>
+        <table width="100%">
+            <tr>
+                <td align="left">
+                    <strong>Funcionario:</strong> <span id="nombre_funcionario">-</span> |
+                    <strong>Área:</strong> <span id="area_funcionario">-</span>
+                </td>
+                <td align="right">
+                    <a href="panel_funcionario.html">← Volver al listado</a> |
+                    <a href="login_funcionario.html">Cerrar Sesión</a>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- ENCABEZADO DEL ASPIRANTE -->
+        <div style="background-color: #e8f4f8; border: 1px solid #b0d4e8; padding: 15px; width: 90%; margin: auto;">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <h3 id="nombre_completo_header">Cargando...</h3>
+                        <p>
+                            <strong>Consecutivo:</strong> <span id="consecutivo_header" style="background-color: #ffffcc; padding: 3px 8px;">-</span> &nbsp;|&nbsp;
+                            <strong>Fecha Inscripción:</strong> <span id="fecha_header">-</span> &nbsp;|&nbsp;
+                            <strong>Estado:</strong> <span id="estado_header" style="font-weight:bold;">-</span>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+
+        <!-- DATOS PERSONALES -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Datos Personales</strong></legend>
+
+            <table border="0" cellpadding="8" width="100%">
+                <tr>
+                    <td width="25%"><strong>Nombre Completo:</strong></td>
+                    <td id="d_nombre_completo">-</td>
+                    <td width="25%"><strong>Tipo de Documento:</strong></td>
+                    <td id="d_tipo_documento">-</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td><strong>Número de Documento:</strong></td>
+                    <td id="d_numero_documento">-</td>
+                    <td><strong>Expedida en:</strong></td>
+                    <td id="d_expedida">-</td>
+                </tr>
+                <tr>
+                    <td><strong>Sexo:</strong></td>
+                    <td id="d_sexo">-</td>
+                    <td><strong>Fecha de Nacimiento:</strong></td>
+                    <td id="d_fecha_nacimiento">-</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td><strong>Lugar de Nacimiento:</strong></td>
+                    <td colspan="3" id="d_lugar_nacimiento">-</td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <!-- DATOS DE CONTACTO -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Datos de Contacto</strong></legend>
+
+            <table border="0" cellpadding="8" width="100%">
+                <tr>
+                    <td width="25%"><strong>Correo Electrónico:</strong></td>
+                    <td id="d_email">-</td>
+                    <td width="25%"><strong>Celular:</strong></td>
+                    <td id="d_celular">-</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td><strong>Teléfono Fijo:</strong></td>
+                    <td id="d_telefono_fijo">-</td>
+                    <td><strong>Dirección:</strong></td>
+                    <td id="d_direccion">-</td>
+                </tr>
+                <tr>
+                    <td><strong>Ciudad / Depto:</strong></td>
+                    <td colspan="3" id="d_ciudad">-</td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <!-- INSCRIPCIÓN -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Información de Inscripción</strong></legend>
+
+            <table border="0" cellpadding="8" width="100%">
+                <tr>
+                    <td width="25%"><strong>Área(s) Solicitada(s):</strong></td>
+                    <td id="d_areas">-</td>
+                    <td width="25%"><strong>Asignatura(s):</strong></td>
+                    <td id="d_asignaturas">-</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td><strong>Fecha de Entrega Docs:</strong></td>
+                    <td id="d_fecha_entrega">-</td>
+                    <td><strong>Número de Folios:</strong></td>
+                    <td id="d_folios">-</td>
+                </tr>
+                <tr>
+                    <td><strong>Disponibilidad:</strong></td>
+                    <td colspan="3" id="d_disponibilidad">-</td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <!-- FORMACIÓN ACADÉMICA -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Formación Académica</strong></legend>
+
+            <table border="0" cellpadding="8" width="100%">
+                <tr>
+                    <td width="25%"><strong>Nivel Educativo:</strong></td>
+                    <td id="d_nivel_educativo">-</td>
+                    <td width="25%"><strong>Título Obtenido:</strong></td>
+                    <td id="d_titulo">-</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td><strong>Institución:</strong></td>
+                    <td id="d_institucion">-</td>
+                    <td><strong>Año de Grado:</strong></td>
+                    <td id="d_anio_grado">-</td>
+                </tr>
+                <tr>
+                    <td><strong>Tarjeta Profesional:</strong></td>
+                    <td colspan="3" id="d_tarjeta">-</td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <!-- EXPERIENCIA -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Experiencia</strong></legend>
+
+            <table border="0" cellpadding="8" width="100%">
+                <tr>
+                    <td width="25%"><strong>¿Tiene exp. docente?</strong></td>
+                    <td id="d_tiene_experiencia">-</td>
+                    <td width="25%"><strong>Años exp. docente:</strong></td>
+                    <td id="d_anios_experiencia">-</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td><strong>Instituciones docencia:</strong></td>
+                    <td colspan="3" id="d_instituciones_docencia">-</td>
+                </tr>
+                <tr>
+                    <td><strong>Áreas de experiencia:</strong></td>
+                    <td colspan="3" id="d_areas_experiencia">-</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td><strong>Cargo Actual:</strong></td>
+                    <td id="d_cargo_actual">-</td>
+                    <td><strong>Empresa Actual:</strong></td>
+                    <td id="d_empresa_actual">-</td>
+                </tr>
+                <tr>
+                    <td><strong>Años exp. profesional:</strong></td>
+                    <td colspan="3" id="d_anios_profesional">-</td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td><strong>Resumen profesional:</strong></td>
+                    <td colspan="3" id="d_resumen_experiencia">-</td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <!-- GESTIÓN DEL ESTADO -->
+        <fieldset style="width: 90%; margin: auto; border: 2px solid #4CAF50;">
+            <legend><strong>⚙ Gestión del Estado de la Solicitud</strong></legend>
+
+            <br>
+
+            <table border="0" cellpadding="10" width="100%">
+                <tr>
+                    <td width="30%">
+                        <label for="nuevo_estado"><strong>Cambiar Estado a:</strong></label><br><br>
+                        <select id="nuevo_estado" name="nuevo_estado" style="width: 100%; padding: 5px;">
+                            <option value="recibida">🔵 RECIBIDA</option>
+                            <option value="revision">🟠 EN REVISIÓN</option>
+                            <option value="incompleta">🟣 DOCUMENTOS INCOMPLETOS</option>
+                            <option value="aprobada">🟢 APROBADA</option>
+                            <option value="rechazada">🔴 RECHAZADA</option>
+                        </select>
+                    </td>
+                    <td width="70%">
+                        <label for="observaciones"><strong>Observaciones / Comentarios:</strong></label><br><br>
+                        <textarea id="observaciones" name="observaciones" rows="4" 
+                                  style="width: 95%;"
+                                  placeholder="Ingrese observaciones sobre la decisión tomada..."></textarea>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <table border="1" cellpadding="8" width="100%" id="tabla_historial">
+                <tr bgcolor="#e0e0e0">
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Estado</th>
+                    <th>Funcionario</th>
+                    <th>Observaciones</th>
+                </tr>
+                <tr id="fila_inicial">
+                    <td id="h_fecha_inicial">-</td>
+                    <td id="h_hora_inicial">-</td>
+                    <td>RECIBIDA</td>
+                    <td>Sistema Automático</td>
+                    <td>Inscripción recibida</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <p align="center">
+                <button type="button" onclick="actualizarEstado()"
+                        style="padding: 10px 30px; background-color: #4CAF50; color: white; 
+                               border: none; font-size: 14px; cursor: pointer;">
+                    ✓ GUARDAR CAMBIO DE ESTADO
+                </button>
+                &nbsp;&nbsp;
+                <button type="button" onclick="window.print()"
+                        style="padding: 10px 30px;">
+                    🖨 IMPRIMIR DETALLE
+                </button>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- DOCUMENTOS -->
+        <fieldset style="width: 90%; margin: auto;">
+            <legend><strong>Lista de Verificación de Documentos</strong></legend>
+
+            <table border="1" cellpadding="8" width="100%" cellspacing="0">
+                <tr bgcolor="#e0e0e0">
+                    <th width="60%">Documento</th>
+                    <th width="20%">Estado</th>
+                    <th width="20%">Observación</th>
+                </tr>
+                <tr>
+                    <td>Hoja de Vida actualizada</td>
+                    <td align="center">
+                        <select>
+                            <option value="pendiente">⏳ Pendiente</option>
+                            <option value="recibido">✓ Recibido</option>
+                            <option value="faltante">✗ Faltante</option>
+                        </select>
+                    </td>
+                    <td><input type="text" size="20"></td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td>Fotocopia cédula (ampliada al 150%)</td>
+                    <td align="center">
+                        <select>
+                            <option value="pendiente">⏳ Pendiente</option>
+                            <option value="recibido">✓ Recibido</option>
+                            <option value="faltante">✗ Faltante</option>
+                        </select>
+                    </td>
+                    <td><input type="text" size="20"></td>
+                </tr>
+                <tr>
+                    <td>Diplomas y certificados de estudios</td>
+                    <td align="center">
+                        <select>
+                            <option value="pendiente">⏳ Pendiente</option>
+                            <option value="recibido">✓ Recibido</option>
+                            <option value="faltante">✗ Faltante</option>
+                        </select>
+                    </td>
+                    <td><input type="text" size="20"></td>
+                </tr>
+                <tr bgcolor="#f9f9f9">
+                    <td>Certificados de experiencia laboral</td>
+                    <td align="center">
+                        <select>
+                            <option value="pendiente">⏳ Pendiente</option>
+                            <option value="recibido">✓ Recibido</option>
+                            <option value="faltante">✗ Faltante</option>
+                        </select>
+                    </td>
+                    <td><input type="text" size="20"></td>
+                </tr>
+                <tr>
+                    <td>Certificados de experiencia docente</td>
+                    <td align="center">
+                        <select>
+                            <option value="pendiente">⏳ Pendiente</option>
+                            <option value="recibido">✓ Recibido</option>
+                            <option value="faltante">✗ Faltante</option>
+                        </select>
+                    </td>
+                    <td><input type="text" size="20"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br><br>
+
+        <p align="center">
+            <a href="panel_funcionario.html">← Volver al listado de aspirantes</a>
+        </p>
+
+    </main>
+
+    <br><br>
+
+    <footer align="center">
+        <hr width="90%">
+        <p><small>© 2026 Escuela de Policía Rafael Reyes - Panel Administrativo</small></p>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+
+        function get(nombre) {
+            return urlParams.get(nombre) || '-';
+        }
+
+        // Datos del funcionario
+        const usuario = urlParams.get('usuario') || 'Funcionario';
+        const area    = urlParams.get('area')    || '';
+        const areasTraduccion = {
+            'secretaria':       'Secretaría Académica',
+            'recursos_humanos': 'Recursos Humanos',
+            'coordinacion':     'Coordinación de Docencia',
+            'direccion':        'Dirección'
+        };
+        document.getElementById('nombre_funcionario').textContent = usuario;
+        document.getElementById('area_funcionario').textContent   = areasTraduccion[area] || area || '-';
+
+        // ── Nombre completo ──
+        const nombres         = get('nombres');
+        const primer_apellido = get('primer_apellido');
+        const segundo_apellido= get('segundo_apellido');
+        // Si vienen del panel como parámetro "nombre" directo, usarlo de respaldo
+        const nombreParam     = urlParams.get('nombre') || '';
+        const nombreCompleto  = (nombres !== '-')
+            ? (nombres + ' ' + primer_apellido + ' ' + segundo_apellido).trim()
+            : nombreParam || '-';
+
+        document.getElementById('nombre_completo_header').textContent = nombreCompleto;
+        document.getElementById('d_nombre_completo').textContent      = nombreCompleto;
+
+        // ── Consecutivo y fecha ──
+        const id = urlParams.get('id') || '';
+        const consecutivo = id ? 'INS-2026-' + id.padStart(3,'0') : get('consecutivo');
+        document.getElementById('consecutivo_header').textContent = consecutivo;
+
+        const ahora = new Date();
+        const fechaStr = ahora.toLocaleDateString('es-CO');
+        const horaStr  = ahora.toLocaleTimeString('es-CO');
+        document.getElementById('fecha_header').textContent       = fechaStr;
+        document.getElementById('h_fecha_inicial').textContent    = fechaStr;
+        document.getElementById('h_hora_inicial').textContent     = horaStr;
+
+        // ── Estado inicial ──
+        const estadoColores = {
+            'recibida':   { texto: 'RECIBIDA',               color: '#cce5ff' },
+            'revision':   { texto: 'EN REVISIÓN',            color: '#fff3cd' },
+            'incompleta': { texto: 'DOCUMENTOS INCOMPLETOS', color: '#e7d4f7' },
+            'aprobada':   { texto: 'APROBADA',               color: '#d4edda' },
+            'rechazada':  { texto: 'RECHAZADA',              color: '#f8d7da' }
+        };
+        let estadoActual = urlParams.get('estado') || 'recibida';
+        function mostrarEstado(e) {
+            const info = estadoColores[e] || { texto: e.toUpperCase(), color: '#fff' };
+            const el = document.getElementById('estado_header');
+            el.textContent        = info.texto;
+            el.style.backgroundColor = info.color;
+            el.style.padding      = '3px 8px';
+        }
+        mostrarEstado(estadoActual);
+
+        // Preseleccionar en el select
+        document.getElementById('nuevo_estado').value = estadoActual;
+
+        // ── Datos personales ──
+        const tiposDoc = { cedula:'Cédula de Ciudadanía', cedula_extranjeria:'Cédula de Extranjería', pasaporte:'Pasaporte' };
+        document.getElementById('d_tipo_documento').textContent   = tiposDoc[get('tipo_documento')] || get('tipo_documento');
+        document.getElementById('d_numero_documento').textContent = get('numero_documento') !== '-' ? get('numero_documento') : get('cedula');
+        document.getElementById('d_expedida').textContent         = get('expedida');
+        document.getElementById('d_sexo').textContent             = get('sexo') === 'F' ? 'Femenino' : (get('sexo') === 'M' ? 'Masculino' : '-');
+        document.getElementById('d_fecha_nacimiento').textContent = get('fecha_nacimiento');
+        document.getElementById('d_lugar_nacimiento').textContent = get('municipio_nacimiento') + ', ' + get('departamento_nacimiento');
+
+        // ── Contacto ──
+        document.getElementById('d_email').textContent        = get('email_contacto') !== '-' ? get('email_contacto') : get('email');
+        document.getElementById('d_celular').textContent      = get('celular');
+        document.getElementById('d_telefono_fijo').textContent= get('telefono_fijo');
+        document.getElementById('d_direccion').textContent    = get('direccion');
+        document.getElementById('d_ciudad').textContent       = get('municipio_residencia') + ', ' + get('departamento_residencia');
+
+        // ── Inscripción ──
+        const areas = [];
+        if (urlParams.get('area_humanidades') === 'humanidades') areas.push('Humanidades');
+        if (urlParams.get('area_juridica')    === 'juridica')    areas.push('Área Jurídica');
+        if (urlParams.get('area_electivas')   === 'electivas')   areas.push('Área Electivas');
+        document.getElementById('d_areas').textContent         = areas.length > 0 ? areas.join(', ') : get('area') !== '-' ? get('area') : '-';
+        document.getElementById('d_asignaturas').textContent   = get('asignaturas');
+        document.getElementById('d_fecha_entrega').textContent = get('fecha_entrega');
+        document.getElementById('d_folios').textContent        = get('numero_folios');
+
+        // Disponibilidad
+        const dias = ['lunes','martes','miercoles','jueves','viernes','sabado'];
+        const diasDisp = dias.filter(d => urlParams.get('dia_' + d) === d);
+        document.getElementById('d_disponibilidad').textContent = diasDisp.length > 0
+            ? diasDisp.map(d => d.charAt(0).toUpperCase() + d.slice(1)).join(', ')
+            : '-';
+
+        // ── Formación ──
+        const nivelTexto = { profesional:'Profesional', especializacion:'Especialización', maestria:'Maestría', doctorado:'Doctorado' };
+        document.getElementById('d_nivel_educativo').textContent = nivelTexto[get('nivel_educativo')] || get('nivel_educativo');
+        document.getElementById('d_titulo').textContent          = get('titulo');
+        document.getElementById('d_institucion').textContent     = get('institucion');
+        document.getElementById('d_anio_grado').textContent      = get('anio_grado');
+        document.getElementById('d_tarjeta').textContent         = get('tarjeta_profesional');
+
+        // ── Experiencia ──
+        document.getElementById('d_tiene_experiencia').textContent   = get('tiene_experiencia') === 'si' ? 'Sí' : (get('tiene_experiencia') === 'no' ? 'No' : '-');
+        document.getElementById('d_anios_experiencia').textContent   = get('anios_experiencia');
+        document.getElementById('d_instituciones_docencia').textContent = get('instituciones_docencia');
+        document.getElementById('d_areas_experiencia').textContent   = get('areas_experiencia');
+        document.getElementById('d_cargo_actual').textContent        = get('cargo_actual');
+        document.getElementById('d_empresa_actual').textContent      = get('empresa_actual');
+        document.getElementById('d_anios_profesional').textContent   = get('anios_experiencia_profesional');
+        document.getElementById('d_resumen_experiencia').textContent = get('resumen_experiencia');
+
+        // ── Cambio de estado ──
+        function actualizarEstado() {
+            const nuevoEstado   = document.getElementById('nuevo_estado').value;
+            const observaciones = document.getElementById('observaciones').value.trim();
+
+            if (!observaciones) {
+                alert('Por favor ingrese una observación antes de guardar el cambio.');
+                document.getElementById('observaciones').focus();
+                return;
+            }
+
+            // Actualizar encabezado
+            estadoActual = nuevoEstado;
+            mostrarEstado(nuevoEstado);
+
+            // Agregar fila al historial
+            const tabla    = document.getElementById('tabla_historial');
+            const nuevaFila= tabla.insertRow(-1);
+            const ahora2   = new Date();
+            nuevaFila.innerHTML = `
+                <td>${ahora2.toLocaleDateString('es-CO')}</td>
+                <td>${ahora2.toLocaleTimeString('es-CO')}</td>
+                <td>${estadoColores[nuevoEstado]?.texto || nuevoEstado.toUpperCase()}</td>
+                <td>${usuario}</td>
+                <td>${observaciones}</td>
+            `;
+            nuevaFila.style.backgroundColor = '#fffde7';
+
+            // Limpiar campo de observaciones
+            document.getElementById('observaciones').value = '';
+
+            alert('Estado actualizado a: ' + (estadoColores[nuevoEstado]?.texto || nuevoEstado.toUpperCase()));
+        }
+    </script>
+</body>
+</html>

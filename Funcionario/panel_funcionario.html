@@ -11,14 +11,14 @@
         <h3>Gestión de Inscripciones Docentes</h3>
         <hr width="90%">
     </header>
-    
+
     <br>
-    
+
     <main>
         <table width="100%">
             <tr>
                 <td align="left">
-                    <strong>Funcionario:</strong> <span id="nombre_funcionario">Cargando...</span><br>
+                    <strong>Funcionario:</strong> <span id="nombre_funcionario">Cargando...</span> |
                     <strong>Área:</strong> <span id="area_funcionario">Cargando...</span>
                 </td>
                 <td align="right">
@@ -26,25 +26,18 @@
                 </td>
             </tr>
         </table>
-        
+
         <br>
-        
-        <div align="center">
-            <h3>Listado de Aspirantes Inscritos</h3>
-        </div>
-        
-        <br>
-        
-        <!-- FILTROS Y BÚSQUEDA -->
+
+        <!-- FILTROS -->
         <fieldset style="width: 90%; margin: auto;">
             <legend><strong>Filtros de Búsqueda</strong></legend>
-            
             <form action="panel_funcionario.html" method="get">
                 <table border="0" cellpadding="5">
                     <tr>
                         <td>
                             <label for="buscar_nombre">Buscar por Nombre/Cédula:</label><br>
-                            <input type="text" id="buscar_nombre" name="buscar_nombre" size="30" 
+                            <input type="text" id="buscar_nombre" name="buscar_nombre" size="30"
                                    placeholder="Ingrese nombre o cédula">
                         </td>
                         <td>
@@ -78,234 +71,317 @@
                 </table>
             </form>
         </fieldset>
-        
+
         <br>
-        
+
         <!-- ESTADÍSTICAS -->
         <fieldset style="width: 90%; margin: auto;">
             <legend><strong>Resumen de Inscripciones</strong></legend>
-            
             <table border="0" cellpadding="10" width="100%">
                 <tr>
-                    <td align="center">
-                        <h2>45</h2>
-                        <p>Total Inscripciones</p>
-                    </td>
-                    <td align="center">
-                        <h2 style="color: blue;">12</h2>
-                        <p>Recibidas</p>
-                    </td>
-                    <td align="center">
-                        <h2 style="color: orange;">18</h2>
-                        <p>En Revisión</p>
-                    </td>
-                    <td align="center">
-                        <h2 style="color: purple;">5</h2>
-                        <p>Incompletas</p>
-                    </td>
-                    <td align="center">
-                        <h2 style="color: green;">8</h2>
-                        <p>Aprobadas</p>
-                    </td>
-                    <td align="center">
-                        <h2 style="color: red;">2</h2>
-                        <p>Rechazadas</p>
-                    </td>
+                    <td align="center"><h2>9</h2><p>Total</p></td>
+                    <td align="center"><h2 style="color:blue;">3</h2><p>Recibidas</p></td>
+                    <td align="center"><h2 style="color:orange;">2</h2><p>En Revisión</p></td>
+                    <td align="center"><h2 style="color:purple;">1</h2><p>Incompletas</p></td>
+                    <td align="center"><h2 style="color:green;">2</h2><p>Aprobadas</p></td>
+                    <td align="center"><h2 style="color:red;">1</h2><p>Rechazadas</p></td>
                 </tr>
             </table>
         </fieldset>
-        
+
         <br>
-        
-        <!-- LISTADO DE ASPIRANTES -->
+
+        <!-- LISTADO -->
         <fieldset style="width: 90%; margin: auto;">
             <legend><strong>Aspirantes Registrados</strong></legend>
-            
-            <table border="1" cellpadding="8" width="100%" cellspacing="0">
-                <tr bgcolor="#4CAF50" style="color: white;">
+
+            <table border="1" cellpadding="8" width="100%" cellspacing="0" id="tabla_aspirantes">
+                <tr bgcolor="#4CAF50" style="color:white;">
                     <th>Consecutivo</th>
-                    <th>Fecha Inscripción</th>
+                    <th>Fecha</th>
                     <th>Nombre Completo</th>
                     <th>Cédula</th>
                     <th>Área Solicitada</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
-                
-                <tr>
-                    <td align="center">INS-2026-001</td>
-                    <td align="center">15/02/2026</td>
-                    <td>Juan Pérez García</td>
-                    <td align="center">1234567890</td>
-                    <td>Área Jurídica</td>
-                    <td align="center" bgcolor="#fff3cd">EN REVISIÓN</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=001">Ver Detalle</a>
-                    </td>
-                </tr>
-                
-                <tr bgcolor="#f9f9f9">
-                    <td align="center">INS-2026-002</td>
-                    <td align="center">16/02/2026</td>
-                    <td>María Rodríguez López</td>
-                    <td align="center">9876543210</td>
-                    <td>Humanidades</td>
-                    <td align="center" bgcolor="#d4edda">APROBADA</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=002">Ver Detalle</a>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td align="center">INS-2026-003</td>
-                    <td align="center">16/02/2026</td>
-                    <td>Carlos Martínez Sánchez</td>
-                    <td align="center">5555555555</td>
-                    <td>Área Electivas</td>
-                    <td align="center" bgcolor="#cce5ff">RECIBIDA</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=003">Ver Detalle</a>
-                    </td>
-                </tr>
-                
-                <tr bgcolor="#f9f9f9">
-                    <td align="center">INS-2026-004</td>
-                    <td align="center">17/02/2026</td>
-                    <td>Ana Patricia Gómez</td>
-                    <td align="center">7777777777</td>
-                    <td>Área Jurídica</td>
-                    <td align="center" bgcolor="#e7d4f7">DOC. INCOMPLETOS</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=004">Ver Detalle</a>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td align="center">INS-2026-005</td>
-                    <td align="center">17/02/2026</td>
-                    <td>Luis Fernando Castro</td>
-                    <td align="center">3333333333</td>
-                    <td>Humanidades</td>
-                    <td align="center" bgcolor="#fff3cd">EN REVISIÓN</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=005">Ver Detalle</a>
-                    </td>
-                </tr>
-                
-                <tr bgcolor="#f9f9f9">
-                    <td align="center">INS-2026-006</td>
-                    <td align="center">18/02/2026</td>
-                    <td>Sandra Milena Torres</td>
-                    <td align="center">6666666666</td>
-                    <td>Área Jurídica</td>
-                    <td align="center" bgcolor="#d4edda">APROBADA</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=006">Ver Detalle</a>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td align="center">INS-2026-007</td>
-                    <td align="center">18/02/2026</td>
-                    <td>Jorge Alberto Ramírez</td>
-                    <td align="center">4444444444</td>
-                    <td>Área Electivas</td>
-                    <td align="center" bgcolor="#f8d7da">RECHAZADA</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=007">Ver Detalle</a>
-                    </td>
-                </tr>
-                
-                <tr bgcolor="#f9f9f9">
-                    <td align="center">INS-2026-008</td>
-                    <td align="center">19/02/2026</td>
-                    <td>Patricia Hernández Vega</td>
-                    <td align="center">8888888888</td>
-                    <td>Humanidades</td>
-                    <td align="center" bgcolor="#cce5ff">RECIBIDA</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=008">Ver Detalle</a>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td align="center">INS-2026-009</td>
-                    <td align="center">23/02/2026</td>
-                    <td>Manuela Camacho Llano</td>
-                    <td align="center">1090273495</td>
-                    <td>Humanidades</td>
-                    <td align="center" bgcolor="#cce5ff">RECIBIDA</td>
-                    <td align="center">
-                        <a href="detalle_aspirante.html?id=009&nombre=Manuela Camacho&cedula=1090273495">Ver Detalle</a>
-                    </td>
-                </tr>
             </table>
-            
+
             <br>
-            
-            <p align="center">
-                <em>Mostrando 9 de 45 registros</em>
-            </p>
-            
-            <p align="center">
-                <a href="#">« Anterior</a> | 
-                <strong>1</strong> | 
-                <a href="#">2</a> | 
-                <a href="#">3</a> | 
-                <a href="#">4</a> | 
-                <a href="#">5</a> | 
-                <a href="#">Siguiente »</a>
-            </p>
+            <p align="center"><em>Mostrando 9 de 9 registros</em></p>
         </fieldset>
-        
+
         <br>
-        
-        <!-- ACCIONES RÁPIDAS -->
+
+        <!-- ACCIONES -->
         <fieldset style="width: 90%; margin: auto;">
             <legend><strong>Acciones</strong></legend>
-            
             <table border="0" cellpadding="10">
                 <tr>
-                    <td>
-                        <button type="button">📊 GENERAR REPORTE</button>
-                    </td>
-                    <td>
-                        <button type="button">📥 EXPORTAR A EXCEL</button>
-                    </td>
-                    <td>
-                        <button type="button">📧 ENVIAR NOTIFICACIONES</button>
-                    </td>
-                    <td>
-                        <button type="button" onclick="location.reload()">🔄 ACTUALIZAR LISTADO</button>
-                    </td>
+                    <td><button type="button">📊 GENERAR REPORTE</button></td>
+                    <td><button type="button">📥 EXPORTAR A EXCEL</button></td>
+                    <td><button type="button">📧 ENVIAR NOTIFICACIONES</button></td>
+                    <td><button type="button" onclick="location.reload()">🔄 ACTUALIZAR LISTADO</button></td>
                 </tr>
             </table>
         </fieldset>
     </main>
-    
+
     <br><br>
-    
+
     <footer align="center">
         <hr width="90%">
         <p><small>© 2026 Escuela de Policía Rafael Reyes - Panel Administrativo</small></p>
     </footer>
-    
+
     <script>
-        // Obtener parámetros de la URL
+        // ── Datos del funcionario ──
         const urlParams = new URLSearchParams(window.location.search);
         const usuario = urlParams.get('usuario') || 'Funcionario';
-        const area = urlParams.get('area') || 'Sin área';
-        
-        // Traducir área
+        const area    = urlParams.get('area')    || '';
         const areasTraduccion = {
-            'secretaria': 'Secretaría Académica',
-            'recursos_humanos': 'Recursos Humanos',
-            'coordinacion': 'Coordinación de Docencia',
-            'direccion': 'Dirección'
+            secretaria:       'Secretaría Académica',
+            recursos_humanos: 'Recursos Humanos',
+            coordinacion:     'Coordinación de Docencia',
+            direccion:        'Dirección'
         };
-        
         document.getElementById('nombre_funcionario').textContent = usuario;
-        document.getElementById('area_funcionario').textContent = areasTraduccion[area] || area;
+        document.getElementById('area_funcionario').textContent   = areasTraduccion[area] || area || '-';
+
+        // ── Base de datos de aspirantes (hardcoded) ──
+        const aspirantes = [
+            {
+                id: '001', fecha: '15/02/2026', estado: 'revision',
+                nombre: 'Juan', primer_apellido: 'Pérez', segundo_apellido: 'García',
+                tipo_documento: 'cedula', numero_documento: '1234567890',
+                expedida: 'Bogotá', pais: 'Colombia', sexo: 'M',
+                fecha_nacimiento: '1985-03-12',
+                municipio_nacimiento: 'Bogotá', departamento_nacimiento: 'Cundinamarca',
+                email: 'juan.perez@gmail.com', celular: '3101234567', telefono_fijo: '6011234567',
+                direccion: 'Cra 15 # 45-20, Chapinero',
+                municipio_residencia: 'Bogotá', departamento_residencia: 'Cundinamarca',
+                area_juridica: 'juridica', asignaturas: 'Derecho Constitucional, Derecho Penal',
+                nivel_educativo: 'maestria', titulo: 'Abogado, Magíster en Derecho Penal',
+                institucion: 'Universidad Nacional de Colombia', anio_grado: '2012',
+                tarjeta_profesional: '123456-A',
+                tiene_experiencia: 'si', anios_experiencia: '8',
+                instituciones_docencia: 'Universidad Externado, UNAD',
+                areas_experiencia: 'Derecho Constitucional, Derechos Humanos',
+                cargo_actual: 'Abogado Senior', empresa_actual: 'Consultorio Jurídico ABC',
+                anios_experiencia_profesional: '12', resumen_experiencia: 'Litigante con amplia experiencia en derecho penal y constitucional.',
+                dia_lunes: 'lunes', dia_miercoles: 'miercoles', fecha_entrega: '2026-02-15', numero_folios: '5'
+            },
+            {
+                id: '002', fecha: '16/02/2026', estado: 'aprobada',
+                nombre: 'María', primer_apellido: 'Rodríguez', segundo_apellido: 'López',
+                tipo_documento: 'cedula', numero_documento: '9876543210',
+                expedida: 'Medellín', pais: 'Colombia', sexo: 'F',
+                fecha_nacimiento: '1980-07-22',
+                municipio_nacimiento: 'Medellín', departamento_nacimiento: 'Antioquia',
+                email: 'maria.rodriguez@hotmail.com', celular: '3209876543', telefono_fijo: '',
+                direccion: 'Cll 10 # 20-30, El Poblado',
+                municipio_residencia: 'Medellín', departamento_residencia: 'Antioquia',
+                area_humanidades: 'humanidades', asignaturas: 'Ética, Filosofía',
+                nivel_educativo: 'doctorado', titulo: 'Doctora en Filosofía',
+                institucion: 'Universidad de Antioquia', anio_grado: '2010',
+                tarjeta_profesional: '',
+                tiene_experiencia: 'si', anios_experiencia: '15',
+                instituciones_docencia: 'Universidad de Antioquia, UPB',
+                areas_experiencia: 'Filosofía, Ética, Humanidades',
+                cargo_actual: 'Docente Catedrática', empresa_actual: 'Universidad de Antioquia',
+                anios_experiencia_profesional: '15', resumen_experiencia: 'Investigadora y docente con amplia trayectoria en humanidades.',
+                dia_martes: 'martes', dia_jueves: 'jueves', fecha_entrega: '2026-02-16', numero_folios: '7'
+            },
+            {
+                id: '003', fecha: '16/02/2026', estado: 'recibida',
+                nombre: 'Carlos', primer_apellido: 'Martínez', segundo_apellido: 'Sánchez',
+                tipo_documento: 'cedula', numero_documento: '5555555555',
+                expedida: 'Cali', pais: 'Colombia', sexo: 'M',
+                fecha_nacimiento: '1990-11-05',
+                municipio_nacimiento: 'Cali', departamento_nacimiento: 'Valle del Cauca',
+                email: 'carlos.martinez@gmail.com', celular: '3155555555', telefono_fijo: '',
+                direccion: 'Av 6N # 23-45, Granada',
+                municipio_residencia: 'Cali', departamento_residencia: 'Valle del Cauca',
+                area_electivas: 'electivas', asignaturas: 'Liderazgo, Trabajo en Equipo',
+                nivel_educativo: 'especializacion', titulo: 'Administrador de Empresas, Especialista en Gerencia',
+                institucion: 'Universidad del Valle', anio_grado: '2016',
+                tarjeta_profesional: '987654-B',
+                tiene_experiencia: 'si', anios_experiencia: '4',
+                instituciones_docencia: 'SENA',
+                areas_experiencia: 'Administración, Liderazgo',
+                cargo_actual: 'Gerente Regional', empresa_actual: 'Empresa XYZ',
+                anios_experiencia_profesional: '8', resumen_experiencia: 'Gerente con experiencia en formación de equipos.',
+                dia_viernes: 'viernes', dia_sabado: 'sabado', fecha_entrega: '2026-02-16', numero_folios: '4'
+            },
+            {
+                id: '004', fecha: '17/02/2026', estado: 'incompleta',
+                nombre: 'Ana Patricia', primer_apellido: 'Gómez', segundo_apellido: 'Vargas',
+                tipo_documento: 'cedula', numero_documento: '7777777777',
+                expedida: 'Bucaramanga', pais: 'Colombia', sexo: 'F',
+                fecha_nacimiento: '1987-04-18',
+                municipio_nacimiento: 'Bucaramanga', departamento_nacimiento: 'Santander',
+                email: 'ana.gomez@yahoo.com', celular: '3177777777', telefono_fijo: '6077890123',
+                direccion: 'Cll 35 # 12-56, Centro',
+                municipio_residencia: 'Bucaramanga', departamento_residencia: 'Santander',
+                area_juridica: 'juridica', asignaturas: 'Derecho Administrativo',
+                nivel_educativo: 'profesional', titulo: 'Abogada',
+                institucion: 'Universidad Industrial de Santander', anio_grado: '2011',
+                tarjeta_profesional: '456789-C',
+                tiene_experiencia: 'no', anios_experiencia: '0',
+                instituciones_docencia: '',
+                areas_experiencia: '',
+                cargo_actual: 'Asesora Jurídica', empresa_actual: 'Alcaldía de Bucaramanga',
+                anios_experiencia_profesional: '10', resumen_experiencia: 'Asesora jurídica del sector público.',
+                dia_lunes: 'lunes', dia_martes: 'martes', fecha_entrega: '2026-02-17', numero_folios: '3'
+            },
+            {
+                id: '005', fecha: '17/02/2026', estado: 'revision',
+                nombre: 'Luis Fernando', primer_apellido: 'Castro', segundo_apellido: 'Mora',
+                tipo_documento: 'cedula', numero_documento: '3333333333',
+                expedida: 'Pereira', pais: 'Colombia', sexo: 'M',
+                fecha_nacimiento: '1983-09-30',
+                municipio_nacimiento: 'Pereira', departamento_nacimiento: 'Risaralda',
+                email: 'luis.castro@gmail.com', celular: '3003333333', telefono_fijo: '',
+                direccion: 'Cra 8 # 19-25, Álamos',
+                municipio_residencia: 'Pereira', departamento_residencia: 'Risaralda',
+                area_humanidades: 'humanidades', asignaturas: 'Comunicación, Redacción',
+                nivel_educativo: 'maestria', titulo: 'Comunicador Social, Magíster en Comunicación',
+                institucion: 'Universidad Tecnológica de Pereira', anio_grado: '2014',
+                tarjeta_profesional: '',
+                tiene_experiencia: 'si', anios_experiencia: '6',
+                instituciones_docencia: 'UTP, UNAD',
+                areas_experiencia: 'Comunicación, Periodismo',
+                cargo_actual: 'Director de Comunicaciones', empresa_actual: 'Gobernación de Risaralda',
+                anios_experiencia_profesional: '10', resumen_experiencia: 'Experto en comunicación institucional y periodismo.',
+                dia_miercoles: 'miercoles', dia_viernes: 'viernes', fecha_entrega: '2026-02-17', numero_folios: '6'
+            },
+            {
+                id: '006', fecha: '18/02/2026', estado: 'aprobada',
+                nombre: 'Sandra Milena', primer_apellido: 'Torres', segundo_apellido: 'Ríos',
+                tipo_documento: 'cedula', numero_documento: '6666666666',
+                expedida: 'Bogotá', pais: 'Colombia', sexo: 'F',
+                fecha_nacimiento: '1979-01-14',
+                municipio_nacimiento: 'Bogotá', departamento_nacimiento: 'Cundinamarca',
+                email: 'sandra.torres@outlook.com', celular: '3116666666', telefono_fijo: '6012345678',
+                direccion: 'Cll 127 # 53-40, Usaquén',
+                municipio_residencia: 'Bogotá', departamento_residencia: 'Cundinamarca',
+                area_juridica: 'juridica', asignaturas: 'Derechos Humanos, Derecho Internacional',
+                nivel_educativo: 'doctorado', titulo: 'Abogada, Doctora en Derecho Internacional',
+                institucion: 'Pontificia Universidad Javeriana', anio_grado: '2008',
+                tarjeta_profesional: '111222-D',
+                tiene_experiencia: 'si', anios_experiencia: '18',
+                instituciones_docencia: 'Universidad Javeriana, Universidad de los Andes',
+                areas_experiencia: 'Derecho Internacional, DDHH',
+                cargo_actual: 'Investigadora', empresa_actual: 'Centro de Estudios de Derecho Internacional',
+                anios_experiencia_profesional: '20', resumen_experiencia: 'Reconocida investigadora en derecho internacional y derechos humanos.',
+                dia_lunes: 'lunes', dia_jueves: 'jueves', fecha_entrega: '2026-02-18', numero_folios: '8'
+            },
+            {
+                id: '007', fecha: '18/02/2026', estado: 'rechazada',
+                nombre: 'Jorge Alberto', primer_apellido: 'Ramírez', segundo_apellido: 'Cruz',
+                tipo_documento: 'cedula', numero_documento: '4444444444',
+                expedida: 'Manizales', pais: 'Colombia', sexo: 'M',
+                fecha_nacimiento: '1995-06-08',
+                municipio_nacimiento: 'Manizales', departamento_nacimiento: 'Caldas',
+                email: 'jorge.ramirez@gmail.com', celular: '3144444444', telefono_fijo: '',
+                direccion: 'Cra 23 # 65-12, La Enea',
+                municipio_residencia: 'Manizales', departamento_residencia: 'Caldas',
+                area_electivas: 'electivas', asignaturas: 'Deportes, Recreación',
+                nivel_educativo: 'profesional', titulo: 'Licenciado en Educación Física',
+                institucion: 'Universidad de Caldas', anio_grado: '2020',
+                tarjeta_profesional: '',
+                tiene_experiencia: 'no', anios_experiencia: '0',
+                instituciones_docencia: '',
+                areas_experiencia: '',
+                cargo_actual: 'Instructor', empresa_actual: 'Club Deportivo Manizales',
+                anios_experiencia_profesional: '2', resumen_experiencia: 'Instructor deportivo recién graduado.',
+                dia_sabado: 'sabado', fecha_entrega: '2026-02-18', numero_folios: '2'
+            },
+            {
+                id: '008', fecha: '19/02/2026', estado: 'recibida',
+                nombre: 'Patricia', primer_apellido: 'Hernández', segundo_apellido: 'Vega',
+                tipo_documento: 'cedula', numero_documento: '8888888888',
+                expedida: 'Barranquilla', pais: 'Colombia', sexo: 'F',
+                fecha_nacimiento: '1982-12-03',
+                municipio_nacimiento: 'Barranquilla', departamento_nacimiento: 'Atlántico',
+                email: 'patricia.hernandez@gmail.com', celular: '3108888888', telefono_fijo: '6058887766',
+                direccion: 'Cll 70 # 43-20, El Prado',
+                municipio_residencia: 'Barranquilla', departamento_residencia: 'Atlántico',
+                area_humanidades: 'humanidades', asignaturas: 'Sociología, Ciencias Políticas',
+                nivel_educativo: 'maestria', titulo: 'Socióloga, Magíster en Ciencias Políticas',
+                institucion: 'Universidad del Norte', anio_grado: '2009',
+                tarjeta_profesional: '',
+                tiene_experiencia: 'si', anios_experiencia: '10',
+                instituciones_docencia: 'Universidad del Norte, Uninorte',
+                areas_experiencia: 'Sociología, Ciencias Políticas',
+                cargo_actual: 'Investigadora Social', empresa_actual: 'Instituto de Estudios Políticos',
+                anios_experiencia_profesional: '14', resumen_experiencia: 'Investigadora con publicaciones en ciencias sociales.',
+                dia_lunes: 'lunes', dia_miercoles: 'miercoles', dia_viernes: 'viernes', fecha_entrega: '2026-02-19', numero_folios: '6'
+            },
+            {
+                id: '009', fecha: '23/02/2026', estado: 'recibida',
+                nombre: 'Manuela', primer_apellido: 'Camacho', segundo_apellido: 'Llano',
+                tipo_documento: 'cedula', numero_documento: '1090273495',
+                expedida: 'Armenia', pais: 'Colombia', sexo: 'F',
+                fecha_nacimiento: '2001-01-14',
+                municipio_nacimiento: 'Armenia', departamento_nacimiento: 'Quindío',
+                email: 'manuca1401@gmail.com', celular: '3126897802', telefono_fijo: '',
+                direccion: 'Cll 5 # 14-30, El Bosque',
+                municipio_residencia: 'Armenia', departamento_residencia: 'Quindío',
+                area_humanidades: 'humanidades', asignaturas: 'Programación web, Construcción de apps empresariales',
+                nivel_educativo: 'profesional', titulo: 'Ingeniera de Sistemas',
+                institucion: 'Universidad del Quindío', anio_grado: '2024',
+                tarjeta_profesional: '',
+                tiene_experiencia: 'no', anios_experiencia: '0',
+                instituciones_docencia: '',
+                areas_experiencia: '',
+                cargo_actual: '', empresa_actual: '',
+                anios_experiencia_profesional: '0', resumen_experiencia: '',
+                dia_lunes: 'lunes', dia_martes: 'martes', dia_miercoles: 'miercoles', fecha_entrega: '2026-02-23', numero_folios: '4'
+            }
+        ];
+
+        // ── Colores por estado ──
+        const estadoConfig = {
+            recibida:   { texto: 'RECIBIDA',               color: '#cce5ff' },
+            revision:   { texto: 'EN REVISIÓN',            color: '#fff3cd' },
+            incompleta: { texto: 'DOC. INCOMPLETOS',       color: '#e7d4f7' },
+            aprobada:   { texto: 'APROBADA',               color: '#d4edda' },
+            rechazada:  { texto: 'RECHAZADA',              color: '#f8d7da' }
+        };
+
+        // ── Construir tabla ──
+        const tabla = document.getElementById('tabla_aspirantes');
+
+        aspirantes.forEach((a, i) => {
+            const cfg = estadoConfig[a.estado] || { texto: a.estado.toUpperCase(), color: '#fff' };
+
+            // Construir URL con TODOS los datos
+            const params = new URLSearchParams();
+            params.set('usuario', usuario);
+            params.set('area',    area);
+            // Todos los campos del aspirante
+            Object.entries(a).forEach(([k, v]) => { if (v) params.set(k, v); });
+
+            const fila = tabla.insertRow(-1);
+            if (i % 2 !== 0) fila.style.backgroundColor = '#f9f9f9';
+
+            fila.innerHTML = `
+                <td align="center">INS-2026-${a.id}</td>
+                <td align="center">${a.fecha}</td>
+                <td>${a.nombre} ${a.primer_apellido} ${a.segundo_apellido}</td>
+                <td align="center">${a.numero_documento}</td>
+                <td>${
+                    a.area_humanidades ? 'Humanidades' :
+                    a.area_juridica    ? 'Área Jurídica' :
+                    a.area_electivas   ? 'Área Electivas' : '-'
+                }</td>
+                <td align="center" bgcolor="${cfg.color}"><strong>${cfg.texto}</strong></td>
+                <td align="center">
+                    <a href="detalle_aspirante.html?${params.toString()}">Ver Detalle</a>
+                </td>
+            `;
+        });
     </script>
 </body>
 </html>
